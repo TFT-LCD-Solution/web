@@ -113,13 +113,22 @@ textarea{min-height:120px; resize:vertical;}
 <!-- Inquiry Form Section -->
 <section id="inquiry" class="container section">
   <h2>Send an Inquiry</h2>
+
   <form action="https://formspree.io/f/mnjdkbzn" method="POST">
+
+    <!-- 顯示給客戶填寫 -->
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="text" name="company" placeholder="Company Name">
     <input type="email" name="email" placeholder="Email" required>
     <textarea name="message" placeholder="Your Inquiry" required></textarea>
-    <!-- Hidden fields for multiple recipients -->
+
+    <!-- 🔑 你自己定義的來源資訊（不顯示給客戶） -->
+    <input type="hidden" name="source_country" value="Japan">
+    <input type="hidden" name="partner_company" value="ABC Display Co., Ltd.">
+
+    <!-- Email 副本 -->
     <input type="hidden" name="_cc" value="ray@twscreen.com,kv@twscreen.com,gina@twscreen.com">
+
     <button type="submit" class="btn primary">Send Inquiry</button>
   </form>
 </section>
@@ -147,6 +156,7 @@ document.querySelectorAll('.scroll-link').forEach(link=>{
 
 </body>
 </html>
+
 
 
 
