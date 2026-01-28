@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TWSCREEN | Display Solutions</title>
+<meta name="description" content="TWSCREEN provides Touch Displays, AD Boards, Display Kits and TFT LCD solutions for global partners." />
+<style>
+:root{
+  --bg:#0b1220; --card:#101a33; --text:#eaf0ff; --muted:#b8c4e6;
+  --line:rgba(255,255,255,.12); --accent:#66d9ff; --accent2:#7cffb2;
+  --shadow: 0 18px 60px rgba(0,0,0,.35);
+  --radius:18px; --max:1120px; --topbar-height:60px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text); font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Arial; scroll-behavior: smooth;}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max), calc(100% - 40px)); margin:0 auto;}
+.topbar{position:sticky; top:0; z-index:50; backdrop-filter: blur(12px); background: rgba(11,18,32,.88); border-bottom:1px solid var(--line); height:var(--topbar-height);}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0; gap:16px;}
+.brand{display:flex; align-items:center; gap:10px; font-weight:700;}
+.brand img{height:36px;}
+.menu{display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-left:auto;}
+.menu a{color:var(--muted); font-size:14px; padding:6px 10px; border-radius:12px;}
+.menu a:hover{background:rgba(255,255,255,.06); color:var(--text);}
+.banner{width:100%; text-align:center; padding:20px 0; margin-bottom:40px;}
+.banner img{width:auto; max-width:100%; max-height:300px; border-radius:12px;}
+.section{padding:50px 0;}
+h1{font-size:36px;margin-bottom:10px;}
+h2{font-size:28px;margin-bottom:20px;}
+.grid4{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px;}
+.card{border:1px solid var(--line); border-radius:var(--radius); padding:16px; background:rgba(255,255,255,.03); text-align:center;}
+.card img{width:100%; height:160px; object-fit:cover; border-radius:12px 12px 0 0; margin-bottom:12px;}
+form{display:grid; gap:12px;}
+input,textarea{width:100%; border-radius:12px; border:1px solid var(--line); background: rgba(255,255,255,.03); color: var(--text); padding:10px;}
+textarea{min-height:120px; resize:vertical;}
+.btn.primary{
+  display:inline-block;
+  padding:12px 24px;
+  border-radius:12px;
+  font-weight:600;
+  font-size:16px;
+  background: linear-gradient(135deg,#66d9ff,#7cffb2);
+  color:#05101b;
+  border:none;
+  box-shadow:0 6px 15px rgba(0,0,0,.25);
+  cursor:pointer;
+  transition:all .3s ease;
+}
+.btn.primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 25px rgba(0,0,0,.35);
+}
+.footer{padding:26px 0 40px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; text-align:center;}
+@media(max-width:700px){.grid4{grid-template-columns:1fr;}.menu{justify-content:flex-end;}}
+</style>
+</head>
+
+<body>
+<!-- Top Navigation -->
+<div class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <img src="assets/logo.png" alt="Partner Logo">
+      <span>TWSCREEN</span>
+    </a>
+    <nav class="menu">
+      <a href="#hero" class="scroll-link">Profile</a>
+      <a href="#products" class="scroll-link">Products</a>
+      <a href="#inquiry" class="scroll-link">Inquiry</a>
+    </nav>
+  </div>
+</div>
+
+<!-- Banner Section -->
+<section id="banner" class="banner">
+  <img src="assets/banner.png" alt="Banner Image">
+</section>
+
+<!-- Hero Section / Complete Display Solutions -->
+<main id="hero" class="hero container">
+  <h1>Complete Display Solutions</h1>
+  <p class="muted">TWSCREEN provides Touch Displays, AD Boards, Display Kits, and TFT LCD panels ready for industrial, commercial, and embedded applications worldwide.</p>
+</main>
+
+<!-- Products Section -->
+<section id="products" class="container section">
+  <h2>Our Products</h2>
+  <div class="grid4">
+    <div class="card">
+      <img src="assets/touch-display.png" alt="Touch Display">
+      <h3>Touch Display</h3>
+      <p>PCAP and resistive touch solutions integrated with TFT LCD panels.</p>
+    </div>
+    <div class="card">
+      <img src="assets/ad-board.png" alt="AD Board">
+      <h3>AD Board</h3>
+      <p>Driver boards supporting HDMI, VGA, DVI, DisplayPort and USB-C.</p>
+    </div>
+    <div class="card">
+      <img src="assets/display-kits.png" alt="Display Kits">
+      <h3>Display Kits</h3>
+      <p>Complete kits including LCD, AD board, cables, and accessories.</p>
+    </div>
+    <div class="card">
+      <img src="assets/tft-lcd.png" alt="TFT LCD">
+      <h3>TFT LCD</h3>
+      <p>6.5”–32” panels from AUO, LG, INNOLUX and more for various applications.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Inquiry Form Section -->
+<section id="inquiry" class="container section">
+  <h2>Send an Inquiry</h2>
+  <form action="https://formspree.io/f/your_form_id" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" name="company" placeholder="Company Name">
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Your Inquiry" required></textarea>
+    <!-- Hidden fields for multiple recipients -->
+    <input type="hidden" name="_cc" value="ray@twscreen.com,kv@twscreen.com,sale@twscreen.com">
+    <button type="submit" class="btn primary">Send Inquiry</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  © <span id="year"></span> TWSCREEN. All rights reserved.
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Smooth scroll with offset for sticky topbar
+document.querySelectorAll('.scroll-link').forEach(link=>{
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetEl = document.getElementById(targetId);
+    const offset = document.documentElement.style.getPropertyValue('--topbar-height') || 60;
+    const topPos = targetEl.getBoundingClientRect().top + window.pageYOffset - parseInt(offset);
+    window.scrollTo({top:topPos, behavior:'smooth'});
+  });
+});
+</script>
+
+</body>
+</html>
