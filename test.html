@@ -1,276 +1,379 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TWSCREEN | Complete Display Solutions</title>
+<!-- =========================
+  基本頁面設定
+  - UTF-8 編碼
+  - 行動裝置自適應
+  - SEO 標題與描述
+========================= -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TWSCREEN | Display Solutions</title>
 
-<link rel="icon" type="image/png" href="assets/logo.png">
+<!-- 網站 favicon（瀏覽器分頁小圖示） -->
+<link rel="icon" type="image/png" href="assets/favicon.png" />
 
-<meta name="description" content="Industrial touch display, AD board, display kits and TFT LCD solutions for global partners.">
+<!-- 搜尋引擎描述 -->
+<meta name="description" content="TWSCREEN provides Touch Displays, AD Boards, Display Kits and TFT LCD solutions for global partners." />
 
+<!-- =========================
+  全站 CSS 樣式（純前端，適合 GitHub Pages）
+========================= -->
 <style>
+/* CSS 變數：統一管理顏色、尺寸 */
 :root{
-  --bg:#0b1220;
-  --card:#101a33;
-  --text:#eaf0ff;
-  --muted:#b8c4e6;
-  --line:rgba(255,255,255,.12);
-  --accent:#66d9ff;
-  --accent2:#7cffb2;
+  --bg:#0b1220;                 /* 背景色 */
+  --card:#101a33;               /* 卡片底色 */
+  --text:#eaf0ff;               /* 主要文字顏色 */
+  --muted:#b8c4e6;              /* 次要文字 */
+  --line:rgba(255,255,255,.12); /* 分隔線 */
+  --accent:#66d9ff;             /* 主視覺漸層色 */
+  --accent2:#7cffb2;            /* 次視覺漸層色 */
+  --shadow: 0 18px 60px rgba(0,0,0,.35);
   --radius:18px;
-  --max:1120px;
+  --max:1120px;                 /* 最大內容寬度 */
+  --topbar-height:60px;         /* 上方導覽列高度（供 JS 計算用） */
 }
 
+/* 全站盒模型統一 */
 *{box-sizing:border-box}
+
+/* 頁面整體字型與背景 */
 html,body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font-family:system-ui,Segoe UI,Roboto,Arial;
-  scroll-behavior:smooth;
+  font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Arial;
+  scroll-behavior: smooth;
 }
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
 
+/* 連結樣式 */
+a{color:inherit;text-decoration:none}
+
+/* 內容容器，控制最大寬度 */
 .container{
   width:min(var(--max), calc(100% - 40px));
   margin:0 auto;
 }
-.section{padding:60px 0}
 
+/* =========================
+  頂部導覽列（sticky）
+========================= */
 .topbar{
   position:sticky;
   top:0;
   z-index:50;
-  backdrop-filter:blur(10px);
-  background:rgba(11,18,32,.9);
+  backdrop-filter: blur(12px);
+  background: rgba(11,18,32,.88);
   border-bottom:1px solid var(--line);
+  height:var(--topbar-height);
 }
+
 .nav{
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:12px 0;
+  gap:16px;
 }
+
+/* Logo + 品牌名稱 */
 .brand{
   display:flex;
   align-items:center;
   gap:10px;
   font-weight:700;
 }
-.brand img{height:36px}
+
+.brand img{height:36px;}
+
+/* 導覽選單 */
 .menu{
   display:flex;
   gap:14px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-left:auto;
 }
+
 .menu a{
-  font-size:14px;
   color:var(--muted);
+  font-size:14px;
   padding:6px 10px;
-  border-radius:10px;
+  border-radius:12px;
 }
+
 .menu a:hover{
-  background:rgba(255,255,255,.08);
+  background:rgba(255,255,255,.06);
   color:var(--text);
 }
 
-/* Banner */
+/* =========================
+  Banner 圖片區
+========================= */
 .banner{
-  padding:30px 0 10px;
+  width:100%;
+  text-align:center;
+  padding:20px 0;
+  margin-bottom:40px;
 }
+
 .banner img{
-  border-radius:14px;
-  max-height:320px;
-  object-fit:cover;
-  margin:auto;
+  width:auto;
+  max-width:100%;
+  max-height:300px;
+  border-radius:12px;
 }
 
-/* Text */
-h1{font-size:36px;margin:0 0 12px}
-h2{font-size:28px;margin-bottom:20px}
-h3{margin:10px 0 6px}
-.muted{color:var(--muted)}
+/* 區塊共用間距 */
+.section{padding:50px 0;}
 
-/* Cards */
+/* 標題大小 */
+h1{font-size:36px;margin-bottom:10px;}
+h2{font-size:28px;margin-bottom:20px;}
+
+/* =========================
+  產品卡片 Grid
+========================= */
 .grid4{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:18px;
+  gap:16px;
 }
+
 .card{
-  background:rgba(255,255,255,.03);
   border:1px solid var(--line);
   border-radius:var(--radius);
-  padding:18px;
-  transition:.3s;
+  padding:16px;
+  background:rgba(255,255,255,.03);
+  text-align:center;
 }
-.card:hover{
-  transform:translateY(-4px);
-}
+
 .card img{
-  border-radius:12px;
+  width:100%;
   height:160px;
   object-fit:cover;
+  border-radius:12px 12px 0 0;
   margin-bottom:12px;
 }
 
-/* Form */
-form{
-  display:grid;
-  gap:12px;
-}
+/* =========================
+  表單樣式
+========================= */
+form{display:grid; gap:12px;}
+
 input,textarea{
   width:100%;
-  padding:12px;
   border-radius:12px;
-  background:rgba(255,255,255,.04);
   border:1px solid var(--line);
-  color:var(--text);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  padding:10px;
 }
-textarea{min-height:130px}
 
-.btn{
-  padding:14px;
-  border-radius:14px;
+textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+/* 主要按鈕樣式 */
+.btn.primary{
+  display:inline-block;
+  padding:12px 24px;
+  border-radius:12px;
   font-weight:600;
   font-size:16px;
+  background: linear-gradient(135deg,#66d9ff,#7cffb2);
+  color:#05101b;
   border:none;
+  box-shadow:0 6px 15px rgba(0,0,0,.25);
   cursor:pointer;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#04131f;
+  transition:all .3s ease;
 }
-.btn:hover{opacity:.9}
 
+.btn.primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 25px rgba(0,0,0,.35);
+}
+
+/* Footer */
 .footer{
-  padding:30px 0;
+  padding:26px 0 40px;
   border-top:1px solid var(--line);
-  text-align:center;
-  font-size:13px;
   color:var(--muted);
+  font-size:13px;
+  text-align:center;
 }
 
+/* 行動裝置調整 */
 @media(max-width:700px){
-  h1{font-size:30px}
+  .grid4{grid-template-columns:1fr;}
+  .menu{justify-content:flex-end;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ===== Top Nav ===== -->
+<!-- =========================
+  頂部導覽列
+========================= -->
 <div class="topbar">
   <div class="container nav">
-    <a href="#hero" class="brand">
+    <a class="brand" href="#top">
       <img src="assets/logo.png" alt="Partner Logo">
       <span>TWSCREEN</span>
     </a>
     <nav class="menu">
-      <a href="#hero">Profile</a>
-      <a href="#products">Products</a>
-      <a href="#solutions">Solutions</a>
-      <a href="#inquiry">Inquiry</a>
+      <a href="#hero" class="scroll-link">Profile</a>
+      <a href="#products" class="scroll-link">Products</a>
+      <a href="#inquiry" class="scroll-link">Inquiry</a>
     </nav>
   </div>
 </div>
 
-<!-- ===== Banner ===== -->
-<section class="banner container">
-  <img src="assets/banner.png" alt="Display Solutions Banner">
+<!-- =========================
+  Banner 區塊
+========================= -->
+<section id="banner" class="banner">
+  <img src="assets/banner.png" alt="Banner Image">
 </section>
 
-<!-- ===== Hero ===== -->
-<section id="hero" class="container section">
+<!-- =========================
+  公司介紹主視覺
+========================= -->
+<main id="hero" class="hero container">
   <h1>Complete Display Solutions</h1>
   <p class="muted">
-    We provide integrated TFT LCD, touch display and driver board solutions
-    to help global partners accelerate product development.
+    TWSCREEN provides Touch Displays, AD Boards, Display Kits, and TFT LCD panels ready for industrial, commercial, and embedded applications worldwide.
   </p>
-</section>
+</main>
 
-<!-- ===== Products ===== -->
+<!-- =========================
+  產品介紹區
+========================= -->
 <section id="products" class="container section">
   <h2>Our Products</h2>
   <div class="grid4">
+    <!-- 每個 card 為一個產品類別 -->
     <div class="card">
-      <img src="assets/touch-display.png">
+      <img src="assets/touch-display.png" alt="Touch Display">
       <h3>Touch Display</h3>
-      <p>PCAP and resistive touch displays for industrial applications.</p>
+      <p>PCAP and resistive touch solutions integrated with TFT LCD panels.</p>
     </div>
+
     <div class="card">
-      <img src="assets/ad-board.png">
+      <img src="assets/ad-board.png" alt="AD Board">
       <h3>AD Board</h3>
-      <p>HDMI / VGA / DP / USB-C display driver boards.</p>
+      <p>Driver boards supporting HDMI, VGA, DVI, DisplayPort and USB-C.</p>
     </div>
+
     <div class="card">
-      <img src="assets/display-kits.png">
+      <img src="assets/display-kits.png" alt="Display Kits">
       <h3>Display Kits</h3>
-      <p>Complete kits including LCD, board and cables.</p>
+      <p>Complete kits including LCD, AD board, cables, and accessories.</p>
     </div>
+
     <div class="card">
-      <img src="assets/tft-lcd.png">
+      <img src="assets/tft-lcd.png" alt="TFT LCD">
       <h3>TFT LCD</h3>
-      <p>6.5”–32” panels from AUO, LG, INNOLUX.</p>
+      <p>6.5”–32” panels from AUO, LG, INNOLUX and more for various applications.</p>
     </div>
   </div>
 </section>
 
-<!-- ===== Solutions ===== -->
-<section id="solutions" class="container section">
-  <h2>Solutions</h2>
-  <div class="grid4">
-    <div class="card"><h3>Industrial HMI</h3><p>Stable displays for automation systems.</p></div>
-    <div class="card"><h3>Embedded</h3><p>Compact solutions for embedded platforms.</p></div>
-    <div class="card"><h3>Commercial</h3><p>Kiosk and POS displays.</p></div>
-    <div class="card"><h3>Customization</h3><p>Touch bonding and interface matching.</p></div>
-  </div>
-</section>
-
-<!-- ===== Inquiry ===== -->
+<!-- =========================
+  詢問表單（Formspree）
+========================= -->
 <section id="inquiry" class="container section">
   <h2>Send an Inquiry</h2>
 
   <form id="inquiry-form" action="https://formspree.io/f/mnjdkbzn" method="POST">
+
+    <!-- 客戶可見欄位 -->
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="text" name="company" placeholder="Company Name">
     <input type="email" name="email" placeholder="Email" required>
     <textarea name="message" placeholder="Your Inquiry" required></textarea>
 
-    <!-- 你自行填寫的識別資訊 -->
+    <!-- 隱藏欄位：用來辨識網站來源 -->
     <input type="hidden" name="partner_country" value="Taiwan">
     <input type="hidden" name="partner_company" value="Taiwan Screen Optronic">
 
-    <!-- 秘密副本 -->
-    <input type="hidden" name="_bcc" value="ray@twscreen.com,kv@twscreen.com,sale@twscreen.com">
+    <!-- 副本寄送（你已設定為 BCC 用途） -->
+    <input type="hidden" name="_cc" value="ray@twscreen.com,kv@twscreen.com,gina@twscreen.com">
 
-    <button class="btn">Send Inquiry</button>
+    <button type="submit" class="btn primary">Send Inquiry</button>
   </form>
 
-  <div id="form-msg" style="margin-top:14px;font-weight:600;"></div>
+  <!-- 表單送出後的即時回饋訊息 -->
+  <div id="form-response" style="margin-top:12px;color:#7cffb2;font-weight:600;"></div>
 </section>
 
+<!-- =========================
+  表單送出（AJAX，不跳頁）
+========================= -->
+<script>
+const form = document.getElementById("inquiry-form");
+const responseDiv = document.getElementById("form-response");
+
+form.addEventListener("submit", async function(e){
+  e.preventDefault(); // 防止表單跳轉
+  responseDiv.textContent = "⏳ Sending...";
+
+  const formData = new FormData(form);
+
+  try {
+    const res = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      responseDiv.style.color = "#7cffb2";
+      responseDiv.textContent = "✅ Your inquiry has been sent!";
+      form.reset();
+    } else {
+      const data = await res.json();
+      responseDiv.style.color = "#ff6b6b";
+      responseDiv.textContent = "❌ Error: " + (data.errors ? data.errors.map(e => e.message).join(", ") : "Please try again");
+    }
+  } catch(err){
+    responseDiv.style.color = "#ff6b6b";
+    responseDiv.textContent = "❌ Network error, please try again.";
+  }
+});
+</script>
+
+<!-- =========================
+  Footer
+========================= -->
 <footer class="footer">
   © <span id="year"></span> TWSCREEN. All rights reserved.
 </footer>
 
+<!-- =========================
+  Footer 年份與平滑捲動
+========================= -->
 <script>
-document.getElementById("year").textContent=new Date().getFullYear();
+// 自動顯示當前年份
+document.getElementById("year").textContent = new Date().getFullYear();
 
-const form=document.getElementById("inquiry-form");
-const msg=document.getElementById("form-msg");
-
-form.addEventListener("submit",async e=>{
-  e.preventDefault();
-  msg.textContent="Sending...";
-  const res=await fetch(form.action,{
-    method:"POST",
-    body:new FormData(form),
-    headers:{Accept:"application/json"}
+// 修正 sticky header 高度的平滑捲動
+document.querySelectorAll('.scroll-link').forEach(link=>{
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetEl = document.getElementById(targetId);
+    const offset = document.documentElement.style.getPropertyValue('--topbar-height') || 60;
+    const topPos = targetEl.getBoundingClientRect().top + window.pageYOffset - parseInt(offset);
+    window.scrollTo({top:topPos, behavior:'smooth'});
   });
-  msg.textContent=res.ok?"Inquiry sent successfully!":"Failed. Please try again.";
-  if(res.ok)form.reset();
 });
 </script>
 
 </body>
 </html>
+
