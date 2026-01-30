@@ -342,7 +342,7 @@
     .kpi .pill{margin:0;}
     form{display:grid; gap:12px; margin-top:8px;}
     .row2{display:grid; grid-template-columns: 1fr 1fr; gap:12px;}
-    input, textarea, select{
+    input, textarea{
       width:100%;
       border-radius:14px;
       border:1px solid var(--line);
@@ -353,7 +353,6 @@
     }
     input::placeholder, textarea::placeholder{color: rgba(184,196,230,.8);}
     textarea{min-height:120px; resize:vertical;}
-    select{appearance:none;}
     .hint{font-size:13px;color:var(--muted);line-height:1.55;margin-top:10px;}
     .formFooter{
       display:flex; gap:12px; align-items:center; flex-wrap:wrap;
@@ -409,7 +408,7 @@
         <a href="#products" class="scroll-link">Products</a>
         <a href="#solutions" class="scroll-link">Solutions</a>
         <a href="#applications" class="scroll-link">Applications</a>
-        <a href="#inquiry" class="scroll-link">Quick RFQ</a>
+        <a href="#inquiry" class="scroll-link">Inquiry</a>
       </nav>
     </div>
   </header>
@@ -457,7 +456,6 @@
       </div>
 
       <div class="heroMedia" aria-label="Hero image">
-        <!-- Suggested new image: assets/hero-display.jpg -->
         <img id="heroImage" src="assets/hero-display.jpg" alt="Display solution preview">
         <div class="mediaBadge">
           <b>Partner Site Template</b><br>
@@ -539,7 +537,7 @@
   </section>
 
   <!-- =========================
-    Solutions (reference-like, short & actionable)
+    Solutions
   ========================= -->
   <section id="solutions" class="container section">
     <div class="sectionHead">
@@ -588,7 +586,7 @@
   </section>
 
   <!-- =========================
-    Why Us (trust builder)
+    Why Us
   ========================= -->
   <section id="why" class="container section">
     <div class="sectionHead">
@@ -631,7 +629,7 @@
   </section>
 
   <!-- =========================
-    Applications / Gallery (add credibility)
+    Applications / Gallery
   ========================= -->
   <section id="applications" class="container section">
     <div class="sectionHead">
@@ -647,7 +645,6 @@
 
     <div class="gallery">
       <div class="galleryLeft">
-        <!-- suggested: assets/app-industrial.jpg -->
         <img src="assets/app-industrial.jpg" alt="Industrial application">
       </div>
 
@@ -665,14 +662,16 @@
   </section>
 
   <!-- =========================
-    Inquiry / Quick RFQ (Formspree) - KEEP YOUR EXISTING FIELDS + hidden fields
+    Inquiry / Formspree
+    Visible fields: name, company, email, message
+    Hidden fields: partner_country, partner_company (for source identification)
   ========================= -->
   <section id="inquiry" class="container section">
     <div class="sectionHead">
       <div class="sectionLead">
-        <h2>Quick RFQ</h2>
+        <h2>Send an Inquiry</h2>
         <p class="muted">
-          Provide basic requirements and we’ll respond with recommended models, alternatives, and lead time guidance.
+          Please fill in the form below. We will reply by email.
         </p>
       </div>
     </div>
@@ -685,10 +684,10 @@
             Typically within <b>1–2 business days</b>:
           </p>
           <div class="kpi">
-            <div class="pill">Recommended models</div>
+            <div class="pill">Model recommendation</div>
             <div class="pill">Alternative options</div>
-            <div class="pill">Spec difference notes</div>
             <div class="pill">Lead time guidance</div>
+            <div class="pill">Quick response</div>
           </div>
 
           <div class="divider"></div>
@@ -700,54 +699,21 @@
 
         <div class="formMain">
           <form id="inquiry-form" action="https://formspree.io/f/mnjdkbzn" method="POST">
-            <!-- Keep your original visible fields -->
+            <!-- Customer visible fields -->
             <div class="row2">
               <input type="text" name="name" placeholder="Your Name *" required>
               <input type="text" name="company" placeholder="Company Name">
             </div>
 
-            <div class="row2">
-              <input type="email" name="email" placeholder="Email *" required>
-              <input type="text" name="country" placeholder="Country / Region">
-            </div>
+            <input type="email" name="email" placeholder="Email *" required>
 
-            <!-- Add helpful optional RFQ fields (Formspree will accept extra fields) -->
-            <div class="row2">
-              <input type="text" name="qty" placeholder="Quantity (e.g., 10 / 1000)">
-              <select name="interface">
-                <option value="" selected>Interface (optional)</option>
-                <option>LVDS</option>
-                <option>eDP</option>
-                <option>RGB</option>
-                <option>MIPI</option>
-                <option>HDMI</option>
-                <option>Other</option>
-              </select>
-            </div>
+            <textarea name="message" placeholder="Your Inquiry *" required></textarea>
 
-            <div class="row2">
-              <input type="text" name="size" placeholder='Size (e.g., 10.1")'>
-              <input type="text" name="brightness" placeholder="Brightness (e.g., 500 nits)">
-            </div>
-
-            <div class="row2">
-              <select name="touch">
-                <option value="" selected>Touch (optional)</option>
-                <option>None</option>
-                <option>PCAP</option>
-                <option>Resistive</option>
-                <option>With Optical Bonding</option>
-              </select>
-              <input type="text" name="temperature" placeholder="Temp Range (e.g., -20~70°C)">
-            </div>
-
-            <textarea name="message" placeholder="Your Inquiry * (use case, resolution, mounting, constraints...)" required></textarea>
-
-            <!-- KEEP your hidden fields exactly (multi-country/multi-partner ready) -->
+            <!-- Hidden fields: site identification -->
             <input type="hidden" id="partner_country" name="partner_country" value="Taiwan">
             <input type="hidden" id="partner_company" name="partner_company" value="Taiwan Screen Optronic">
 
-            <!-- KEEP your CC list -->
+            <!-- CC list (your BCC usage) -->
             <input type="hidden" name="_cc" value="ray@twscreen.com,kv@twscreen.com,gina@twscreen.com">
 
             <div class="formFooter">
@@ -759,7 +725,7 @@
           <div id="form-response"></div>
 
           <p class="hint">
-            Tip: If you already have a panel model number, include it in the message — we can cross-check availability and propose replacements if needed.
+            Tip: If you already have a panel model number, include it in the message.
           </p>
         </div>
       </div>
@@ -775,10 +741,6 @@
 
   <!-- =========================
     Scripts
-    - partner config injection
-    - AJAX Formspree (kept)
-    - smooth scroll with sticky header offset (kept)
-    - active menu highlighting (nice to have)
   ========================= -->
   <script>
     // Year
@@ -826,7 +788,7 @@
       });
     });
 
-    // AJAX Formspree submit (kept)
+    // AJAX Formspree submit (no redirect)
     const form = document.getElementById("inquiry-form");
     const responseDiv = document.getElementById("form-response");
 
@@ -849,7 +811,7 @@
           responseDiv.textContent = "✅ Your inquiry has been sent! We will reply by email.";
           form.reset();
 
-          // re-apply hidden fields after reset
+          // IMPORTANT: form.reset() clears hidden fields too, so restore them
           const pc = document.getElementById("partner_country");
           const pco = document.getElementById("partner_company");
           if (pc && window.PARTNER && window.PARTNER.country) pc.value = window.PARTNER.country;
@@ -870,7 +832,7 @@
       }
     });
 
-    // Active menu highlight (nice UX)
+    // Active menu highlight
     const sections = ["hero","products","solutions","applications","inquiry"].map(id=>document.getElementById(id)).filter(Boolean);
     const navLinks = Array.from(document.querySelectorAll('.menu a.scroll-link'));
 
