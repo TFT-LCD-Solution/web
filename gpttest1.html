@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- =========================
+    Basic
+  ========================= -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>TWSCREEN | Display Solutions</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta name="description" content="TWSCREEN provides Touch Displays, AD Boards, Display Kits and TFT LCD solutions for global partners." />
+
+  <!-- =========================
+    PARTNER CONFIG (for multi-country / multi-partner)
+    - When you create a new partner site, only change these values.
+  ========================= -->
+  <script>
+    window.PARTNER = {
+      country: "Taiwan",
+      partnerCompany: "Taiwan Screen Optronic",
+      partnerLogo: "assets/logo.png",               // partner logo (or TWSCREEN logo)
+      heroImage: "assets/hero-display.jpg",         // suggested new image
+      bannerImage: "assets/banner.png",             // keep your original if you want
+      contactEmail: "sales@twscreen.com",
+      ctaPrimaryLabel: "Request a Quote (RFQ)",
+      ctaSecondaryLabel: "See Applications"
+    };
+  </script>
+
+  <!-- =========================
+    CSS (GitHub Pages friendly)
+  ========================= -->
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#101a33;
+      --text:#eaf0ff;
+      --muted:#b8c4e6;
+      --line:rgba(255,255,255,.12);
+      --glass: rgba(255,255,255,.04);
+
+      --accent:#66d9ff;
+      --accent2:#7cffb2;
+
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1120px;
+      --topbar-height:64px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(102,217,255,.20), transparent 60%),
+                  radial-gradient(1200px 800px at 100% 10%, rgba(124,255,178,.16), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Arial;
+      scroll-behavior:smooth;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto;}
+
+    /* =========================
+      Topbar
+    ========================= */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      height:var(--topbar-height);
+      backdrop-filter: blur(12px);
+      background: rgba(11,18,32,.78);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      height:var(--topbar-height);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800;
+      letter-spacing:.2px;
+      min-width: 180px;
+    }
+    .brand img{height:36px;width:auto;}
+    .menu{
+      display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .menu a{
+      color:var(--muted);
+      font-size:14px;
+      padding:8px 10px;
+      border-radius:12px;
+      transition: .2s ease;
+    }
+    .menu a:hover{background:rgba(255,255,255,.06); color:var(--text);}
+    .menu a.active{background:rgba(102,217,255,.12); color:var(--text); border:1px solid rgba(102,217,255,.22);}
+
+    /* =========================
+      Utility
+    ========================= */
+    .section{padding:64px 0;}
+    .muted{color:var(--muted); line-height:1.6;}
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius:999px;
+      color: var(--muted);
+      font-size:13px;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(102,217,255,.12);
+    }
+    h1{font-size:42px; line-height:1.12; margin:14px 0 12px;}
+    h2{font-size:30px; margin:0 0 18px;}
+    h3{margin:10px 0 6px; font-size:18px;}
+    p{margin:0 0 12px;}
+    .divider{border-top:1px solid var(--line); margin:18px 0 0;}
+
+    /* =========================
+      Buttons
+    ========================= */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 18px;
+      border-radius:14px;
+      font-weight:700;
+      font-size:15px;
+      cursor:pointer;
+      border:1px solid transparent;
+      transition: all .25s ease;
+      gap:10px;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#05101b;
+      box-shadow:0 10px 24px rgba(0,0,0,.35);
+    }
+    .btn.primary:hover{transform:translateY(-2px); box-shadow:0 16px 34px rgba(0,0,0,.45);}
+    .btn.ghost{
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      color: var(--text);
+    }
+    .btn.ghost:hover{transform:translateY(-2px); background: rgba(255,255,255,.06);}
+
+    /* =========================
+      Hero
+    ========================= */
+    .heroWrap{padding:28px 0 10px;}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .heroCard{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-radius:24px;
+      padding:22px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .heroCard::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(700px 240px at 15% 0%, rgba(102,217,255,.18), transparent 60%),
+                  radial-gradient(700px 240px at 90% 20%, rgba(124,255,178,.14), transparent 55%);
+      pointer-events:none;
+      filter: blur(0px);
+    }
+    .heroContent{position:relative;}
+    .heroActions{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;}
+    .heroBullets{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      margin-top:14px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius:16px;
+      padding:10px 12px;
+      color: var(--muted);
+      font-size:13px;
+    }
+    .heroMedia{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      position:relative;
+      min-height: 320px;
+    }
+    .heroMedia img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity: .96;
+    }
+    .mediaBadge{
+      position:absolute;
+      left:14px; bottom:14px;
+      border:1px solid var(--line);
+      background: rgba(11,18,32,.68);
+      backdrop-filter: blur(10px);
+      border-radius:16px;
+      padding:10px 12px;
+      max-width: 90%;
+      font-size:13px;
+      color: var(--muted);
+    }
+    .mediaBadge b{color:var(--text);}
+
+    /* =========================
+      Section header row
+    ========================= */
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:16px; flex-wrap:wrap;
+      margin-bottom:16px;
+    }
+    .sectionLead{max-width: 760px;}
+
+    /* =========================
+      Cards / grids
+    ========================= */
+    .grid3{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:16px;}
+    .grid4{display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:16px;}
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.045);
+      border-color: rgba(102,217,255,.22);
+    }
+    .cardMedia{
+      height:160px;
+      background: rgba(255,255,255,.02);
+      border-bottom:1px solid var(--line);
+    }
+    .cardMedia img{width:100%; height:100%; object-fit:cover;}
+    .cardBody{padding:14px;}
+    .mini{font-size:13px; color:var(--muted); line-height:1.55;}
+
+    .iconMark{
+      width:42px;height:42px;border-radius:14px;
+      background: linear-gradient(135deg, rgba(102,217,255,.22), rgba(124,255,178,.18));
+      border:1px solid rgba(255,255,255,.14);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;color:var(--text);
+    }
+
+    /* =========================
+      Gallery
+    ========================= */
+    .gallery{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+    }
+    .galleryLeft{
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      background: rgba(255,255,255,.03);
+      min-height: 320px;
+    }
+    .galleryLeft img{width:100%; height:100%; object-fit:cover;}
+    .galleryRight{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+    .gItem{
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      background: rgba(255,255,255,.03);
+      min-height: 152px;
+      position:relative;
+    }
+    .gItem img{width:100%; height:100%; object-fit:cover;}
+    .gLabel{
+      position:absolute; left:12px; bottom:12px;
+      padding:8px 10px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(11,18,32,.62);
+      backdrop-filter: blur(10px);
+      color: var(--text);
+      font-size:13px;
+    }
+
+    /* =========================
+      RFQ / Form
+    ========================= */
+    .formWrap{
+      border:1px solid var(--line);
+      border-radius:24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .formGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:0;
+    }
+    .formAside{
+      padding:18px 18px 20px;
+      border-right:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .formMain{
+      padding:18px;
+    }
+    .kpi{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:12px;
+    }
+    .kpi .pill{margin:0;}
+    form{display:grid; gap:12px; margin-top:8px;}
+    .row2{display:grid; grid-template-columns: 1fr 1fr; gap:12px;}
+    input, textarea, select{
+      width:100%;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      padding:11px 12px;
+      outline:none;
+    }
+    input::placeholder, textarea::placeholder{color: rgba(184,196,230,.8);}
+    textarea{min-height:120px; resize:vertical;}
+    select{appearance:none;}
+    .hint{font-size:13px;color:var(--muted);line-height:1.55;margin-top:10px;}
+    .formFooter{
+      display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+      margin-top:6px;
+    }
+    #form-response{margin-top:10px; font-weight:700;}
+
+    /* =========================
+      Footer
+    ========================= */
+    .footer{
+      padding:30px 0 44px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+
+    /* =========================
+      Responsive
+    ========================= */
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .grid4{grid-template-columns: repeat(2, minmax(0,1fr));}
+      .grid3{grid-template-columns: 1fr;}
+      .gallery{grid-template-columns: 1fr;}
+      .formGrid{grid-template-columns: 1fr;}
+      .formAside{border-right:none;border-bottom:1px solid var(--line);}
+    }
+    @media(max-width:640px){
+      h1{font-size:34px;}
+      .grid4{grid-template-columns: 1fr;}
+      .row2{grid-template-columns: 1fr;}
+      .heroBullets{grid-template-columns:1fr;}
+      .brand{min-width:auto;}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- =========================
+    Topbar
+  ========================= -->
+  <header class="topbar" id="top">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <img id="brandLogo" src="assets/logo.png" alt="Partner Logo">
+        <span>TWSCREEN</span>
+      </a>
+
+      <nav class="menu" aria-label="Primary">
+        <a href="#hero" class="scroll-link">Profile</a>
+        <a href="#products" class="scroll-link">Products</a>
+        <a href="#solutions" class="scroll-link">Solutions</a>
+        <a href="#applications" class="scroll-link">Applications</a>
+        <a href="#inquiry" class="scroll-link">Quick RFQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================
+    Hero (reference-like landing)
+  ========================= -->
+  <section class="heroWrap">
+    <div class="container hero" id="hero">
+      <div class="heroCard">
+        <div class="heroContent">
+          <span class="eyebrow"><span class="dot"></span> TFT LCD • Touch • AD Boards • Display Kits</span>
+          <h1>Stable, Bright, Reliable Display Solutions for Your Device</h1>
+          <p class="muted">
+            TWSCREEN (twscreen.com) provides multi-brand TFT LCD panels and integrated display solutions for
+            industrial, medical, transportation, outdoor, and custom projects — from model selection and samples
+            to production delivery.
+          </p>
+
+          <div class="heroActions">
+            <a class="btn primary scroll-link" href="#inquiry" id="ctaPrimary">
+              Request a Quote (RFQ)
+            </a>
+            <a class="btn ghost scroll-link" href="#applications" id="ctaSecondary">
+              See Applications
+            </a>
+            <a class="btn ghost" href="https://www.twscreen.com/" target="_blank" rel="noopener">
+              Visit TWSCREEN
+            </a>
+          </div>
+
+          <div class="heroBullets">
+            <div class="pill">Flexible MOQ • Fast sampling</div>
+            <div class="pill">Global shipping • Partner-ready</div>
+            <div class="pill">Integration: Touch / OCA / Bonding / Boards</div>
+            <div class="pill">Typical response: 1–2 business days</div>
+          </div>
+
+          <div class="divider"></div>
+          <p class="muted" style="margin-top:14px;">
+            <b>Start with requirements, not part numbers.</b><br>
+            Share size, resolution, brightness, interface, temperature range, and use case — we’ll recommend suitable models and alternatives.
+          </p>
+        </div>
+      </div>
+
+      <div class="heroMedia" aria-label="Hero image">
+        <!-- Suggested new image: assets/hero-display.jpg -->
+        <img id="heroImage" src="assets/hero-display.jpg" alt="Display solution preview">
+        <div class="mediaBadge">
+          <b>Partner Site Template</b><br>
+          Designed for rapid multi-country & multi-partner deployment.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+    Banner (keep your original)
+  ========================= -->
+  <section id="banner" class="container" style="padding: 10px 0 20px;">
+    <div style="border:1px solid var(--line); border-radius:24px; overflow:hidden; background:rgba(255,255,255,.03);">
+      <img id="bannerImage" src="assets/banner.png" alt="Banner Image" style="width:100%; max-height:320px; object-fit:cover;">
+    </div>
+  </section>
+
+  <!-- =========================
+    Products
+  ========================= -->
+  <section id="products" class="container section">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2>Products</h2>
+        <p class="muted">
+          Clear categories for fast navigation: panels, touch integration, driver boards, and complete kits.
+          (You can link each card to your existing product pages or PDFs later.)
+        </p>
+      </div>
+      <a class="btn ghost scroll-link" href="#inquiry">Get a recommendation</a>
+    </div>
+
+    <div class="grid4">
+      <article class="card">
+        <div class="cardMedia">
+          <img src="assets/touch-display.png" alt="Touch Display">
+        </div>
+        <div class="cardBody">
+          <h3>Touch Display</h3>
+          <p class="mini">PCAP and resistive touch solutions integrated with TFT LCD panels.</p>
+          <p class="mini">Options: glove / water / EMI shielding / custom cover glass.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardMedia">
+          <img src="assets/ad-board.png" alt="AD Board">
+        </div>
+        <div class="cardBody">
+          <h3>AD Board</h3>
+          <p class="mini">Driver boards supporting HDMI, VGA, DVI, DisplayPort and USB-C (depends on model).</p>
+          <p class="mini">Bring-up faster: matching cables + stable firmware support.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardMedia">
+          <img src="assets/display-kits.png" alt="Display Kits">
+        </div>
+        <div class="cardBody">
+          <h3>Display Kits</h3>
+          <p class="mini">Complete kits including LCD, AD board, cables, and accessories.</p>
+          <p class="mini">Ideal for evaluation, demos, and quick prototyping.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardMedia">
+          <img src="assets/tft-lcd.png" alt="TFT LCD">
+        </div>
+        <div class="cardBody">
+          <h3>TFT LCD Panels</h3>
+          <p class="mini">6.5”–32” panels from AUO, LG, INNOLUX, BOE and more.</p>
+          <p class="mini">Industrial lifecycle focus with alternative suggestions.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- =========================
+    Solutions (reference-like, short & actionable)
+  ========================= -->
+  <section id="solutions" class="container section">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2>Solutions</h2>
+        <p class="muted">
+          What partners actually need: reduce selection risk, speed up integration, and secure supply continuity.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <article class="card">
+        <div class="cardBody">
+          <div class="iconMark">BOM</div>
+          <h3>Model Selection (BOM / Alternatives)</h3>
+          <p class="mini">
+            Based on size, brightness, interface, temperature range, availability risk — we propose a shortlist of
+            recommended models and compatible alternatives.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardBody">
+          <div class="iconMark">OCA</div>
+          <h3>Touch + Optical Bonding Integration</h3>
+          <p class="mini">
+            OCA/LOCA bonding, custom cover glass, mechanical integration — better outdoor readability,
+            fewer reflections, higher reliability.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardBody">
+          <div class="iconMark">LD</div>
+          <h3>Prototype → Production Delivery</h3>
+          <p class="mini">
+            Fast sampling, transparent lead time, and shipping support. We can align test standards, packaging,
+            and delivery requirements with your project.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- =========================
+    Why Us (trust builder)
+  ========================= -->
+  <section id="why" class="container section">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2>Why TWSCREEN</h2>
+        <p class="muted">
+          Engineering-first selection and practical supply-chain thinking — so your team can approve faster and deploy with less risk.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <article class="card">
+        <div class="cardBody">
+          <h3>Engineering Mindset</h3>
+          <p class="mini">
+            We start from operating conditions (brightness, temperature, EMI, lifetime) and match the right components.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardBody">
+          <h3>Flexible Supply Options</h3>
+          <p class="mini">
+            When shortage or EOL happens, we provide alternatives and highlight spec differences for internal approval.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardBody">
+          <h3>Partner-Ready Communication</h3>
+          <p class="mini">
+            Clear quotation inputs, quick response, and straightforward documentation to speed up decision making.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- =========================
+    Applications / Gallery (add credibility)
+  ========================= -->
+  <section id="applications" class="container section">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2>Applications</h2>
+        <p class="muted">
+          Replace these images with real partner scenarios to boost trust immediately.
+          Recommended: 1600px width images for best clarity.
+        </p>
+      </div>
+      <a class="btn ghost scroll-link" href="#inquiry">Tell us your use case</a>
+    </div>
+
+    <div class="gallery">
+      <div class="galleryLeft">
+        <!-- suggested: assets/app-industrial.jpg -->
+        <img src="assets/app-industrial.jpg" alt="Industrial application">
+      </div>
+
+      <div class="galleryRight">
+        <div class="gItem">
+          <img src="assets/app-medical.jpg" alt="Medical application">
+          <div class="gLabel">Medical / HMI</div>
+        </div>
+        <div class="gItem">
+          <img src="assets/app-transport.jpg" alt="Transportation application">
+          <div class="gLabel">Transportation / Outdoor</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+    Inquiry / Quick RFQ (Formspree) - KEEP YOUR EXISTING FIELDS + hidden fields
+  ========================= -->
+  <section id="inquiry" class="container section">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2>Quick RFQ</h2>
+        <p class="muted">
+          Provide basic requirements and we’ll respond with recommended models, alternatives, and lead time guidance.
+        </p>
+      </div>
+    </div>
+
+    <div class="formWrap">
+      <div class="formGrid">
+        <aside class="formAside">
+          <h3 style="margin-top:0;">What you’ll get</h3>
+          <p class="muted">
+            Typically within <b>1–2 business days</b>:
+          </p>
+          <div class="kpi">
+            <div class="pill">Recommended models</div>
+            <div class="pill">Alternative options</div>
+            <div class="pill">Spec difference notes</div>
+            <div class="pill">Lead time guidance</div>
+          </div>
+
+          <div class="divider"></div>
+          <p class="hint">
+            Prefer email? You can also contact: <b id="salesEmail">sales@twscreen.com</b><br>
+            (You can customize this per partner site.)
+          </p>
+        </aside>
+
+        <div class="formMain">
+          <form id="inquiry-form" action="https://formspree.io/f/mnjdkbzn" method="POST">
+            <!-- Keep your original visible fields -->
+            <div class="row2">
+              <input type="text" name="name" placeholder="Your Name *" required>
+              <input type="text" name="company" placeholder="Company Name">
+            </div>
+
+            <div class="row2">
+              <input type="email" name="email" placeholder="Email *" required>
+              <input type="text" name="country" placeholder="Country / Region">
+            </div>
+
+            <!-- Add helpful optional RFQ fields (Formspree will accept extra fields) -->
+            <div class="row2">
+              <input type="text" name="qty" placeholder="Quantity (e.g., 10 / 1000)">
+              <select name="interface">
+                <option value="" selected>Interface (optional)</option>
+                <option>LVDS</option>
+                <option>eDP</option>
+                <option>RGB</option>
+                <option>MIPI</option>
+                <option>HDMI</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="row2">
+              <input type="text" name="size" placeholder='Size (e.g., 10.1")'>
+              <input type="text" name="brightness" placeholder="Brightness (e.g., 500 nits)">
+            </div>
+
+            <div class="row2">
+              <select name="touch">
+                <option value="" selected>Touch (optional)</option>
+                <option>None</option>
+                <option>PCAP</option>
+                <option>Resistive</option>
+                <option>With Optical Bonding</option>
+              </select>
+              <input type="text" name="temperature" placeholder="Temp Range (e.g., -20~70°C)">
+            </div>
+
+            <textarea name="message" placeholder="Your Inquiry * (use case, resolution, mounting, constraints...)" required></textarea>
+
+            <!-- KEEP your hidden fields exactly (multi-country/multi-partner ready) -->
+            <input type="hidden" id="partner_country" name="partner_country" value="Taiwan">
+            <input type="hidden" id="partner_company" name="partner_company" value="Taiwan Screen Optronic">
+
+            <!-- KEEP your CC list -->
+            <input type="hidden" name="_cc" value="ray@twscreen.com,kv@twscreen.com,gina@twscreen.com">
+
+            <div class="formFooter">
+              <button type="submit" class="btn primary">Send Inquiry</button>
+              <span class="muted" style="font-size:13px;">No account needed. We’ll reply by email.</span>
+            </div>
+          </form>
+
+          <div id="form-response"></div>
+
+          <p class="hint">
+            Tip: If you already have a panel model number, include it in the message — we can cross-check availability and propose replacements if needed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+    Footer
+  ========================= -->
+  <footer class="footer">
+    © <span id="year"></span> TWSCREEN. All rights reserved.
+  </footer>
+
+  <!-- =========================
+    Scripts
+    - partner config injection
+    - AJAX Formspree (kept)
+    - smooth scroll with sticky header offset (kept)
+    - active menu highlighting (nice to have)
+  ========================= -->
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Apply partner config
+    (function applyPartner(){
+      if(!window.PARTNER) return;
+
+      const logo = document.getElementById("brandLogo");
+      const hero = document.getElementById("heroImage");
+      const banner = document.getElementById("bannerImage");
+      const salesEmail = document.getElementById("salesEmail");
+
+      if (window.PARTNER.partnerLogo) logo.src = window.PARTNER.partnerLogo;
+      if (window.PARTNER.heroImage) hero.src = window.PARTNER.heroImage;
+      if (window.PARTNER.bannerImage) banner.src = window.PARTNER.bannerImage;
+      if (window.PARTNER.contactEmail) salesEmail.textContent = window.PARTNER.contactEmail;
+
+      const cta1 = document.getElementById("ctaPrimary");
+      const cta2 = document.getElementById("ctaSecondary");
+      if (window.PARTNER.ctaPrimaryLabel) cta1.textContent = window.PARTNER.ctaPrimaryLabel;
+      if (window.PARTNER.ctaSecondaryLabel) cta2.textContent = window.PARTNER.ctaSecondaryLabel;
+
+      // keep hidden fields synced
+      const pc = document.getElementById("partner_country");
+      const pco = document.getElementById("partner_company");
+      if (pc && window.PARTNER.country) pc.value = window.PARTNER.country;
+      if (pco && window.PARTNER.partnerCompany) pco.value = window.PARTNER.partnerCompany;
+    })();
+
+    // Smooth scroll with sticky header height
+    document.querySelectorAll('.scroll-link').forEach(link=>{
+      link.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(!href || !href.startsWith('#')) return;
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetEl = document.getElementById(targetId);
+        if(!targetEl) return;
+
+        const offset = getComputedStyle(document.documentElement).getPropertyValue('--topbar-height') || '64px';
+        const topPos = targetEl.getBoundingClientRect().top + window.pageYOffset - parseInt(offset, 10);
+        window.scrollTo({top: topPos, behavior:'smooth'});
+      });
+    });
+
+    // AJAX Formspree submit (kept)
+    const form = document.getElementById("inquiry-form");
+    const responseDiv = document.getElementById("form-response");
+
+    form.addEventListener("submit", async function(e){
+      e.preventDefault();
+      responseDiv.style.color = "#b8c4e6";
+      responseDiv.textContent = "⏳ Sending...";
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          responseDiv.style.color = "#7cffb2";
+          responseDiv.textContent = "✅ Your inquiry has been sent! We will reply by email.";
+          form.reset();
+
+          // re-apply hidden fields after reset
+          const pc = document.getElementById("partner_country");
+          const pco = document.getElementById("partner_company");
+          if (pc && window.PARTNER && window.PARTNER.country) pc.value = window.PARTNER.country;
+          if (pco && window.PARTNER && window.PARTNER.partnerCompany) pco.value = window.PARTNER.partnerCompany;
+
+        } else {
+          let msg = "Please try again.";
+          try{
+            const data = await res.json();
+            msg = data.errors ? data.errors.map(e => e.message).join(", ") : msg;
+          }catch(_){}
+          responseDiv.style.color = "#ff6b6b";
+          responseDiv.textContent = "❌ Error: " + msg;
+        }
+      } catch(err){
+        responseDiv.style.color = "#ff6b6b";
+        responseDiv.textContent = "❌ Network error, please try again.";
+      }
+    });
+
+    // Active menu highlight (nice UX)
+    const sections = ["hero","products","solutions","applications","inquiry"].map(id=>document.getElementById(id)).filter(Boolean);
+    const navLinks = Array.from(document.querySelectorAll('.menu a.scroll-link'));
+
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          navLinks.forEach(a=>a.classList.remove('active'));
+          const active = navLinks.find(a => a.getAttribute('href') === '#' + entry.target.id);
+          if(active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0.02 });
+
+    sections.forEach(s=>io.observe(s));
+  </script>
+</body>
+</html>
