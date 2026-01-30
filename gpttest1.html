@@ -701,7 +701,7 @@
               <input type="text" name="name" placeholder="Your Name *" required>
               <input type="text" name="company" placeholder="Company Name">
             </div>
-            
+
             <input type="telephone" name="telephone" placeholder="telephone">
             <input type="email" name="email" placeholder="Email *" required>
 
@@ -710,6 +710,9 @@
             <!-- Hidden fields: site identification -->
             <input type="hidden" id="partner_country" name="partner_country" value="Taiwan">
             <input type="hidden" id="partner_company" name="partner_company" value="Taiwan Screen Optronic">
+
+            <!-- NEW: Subject (Name | Timestamp) to avoid Gmail thread folding -->
+            <input type="hidden" id="_subject" name="_subject" value="">
 
             <!-- CC list (your BCC usage) -->
             <input type="hidden" name="_cc" value="ray@twscreen.com,gina@twscreen.com">
@@ -795,6 +798,17 @@
       responseDiv.style.color = "#b8c4e6";
       responseDiv.textContent = "⏳ Sending...";
 
+      // NEW: Subject = Customer Name | Timestamp (avoid Gmail thread folding)
+      const nameValRaw = (form.querySelector('input[name="name"]')?.value || "").trim();
+      const nameVal = nameValRaw ? nameValRaw.replace(/\s+/g, " ") : "Inquiry";
+
+      const pad = (n) => String(n).padStart(2, "0");
+      const now = new Date();
+      const ts = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+
+      const subjEl = document.getElementById("_subject");
+      if (subjEl) subjEl.value = `${nameVal} | ${ts} (${Date.now()})`;
+
       const formData = new FormData(form);
 
       try {
@@ -814,6 +828,10 @@
           const pco = document.getElementById("partner_company");
           if (pc && window.PARTNER && window.PARTNER.country) pc.value = window.PARTNER.country;
           if (pco && window.PARTNER && window.PARTNER.partnerCompany) pco.value = window.PARTNER.partnerCompany;
+
+          // reset subject field (optional)
+          const subj = document.getElementById("_subject");
+          if (subj) subj.value = "";
 
         } else {
           let msg = "Please try again.";
@@ -848,5 +866,3 @@
   </script>
 </body>
 </html>
-
-
