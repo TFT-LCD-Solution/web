@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TWSCREEN | Display Solutions</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta
+    name="description"
+    content="TWSCREEN provides Touch Displays, AD Boards, Display Kits and TFT LCD solutions for global partners."
+  />
+
+  <script>
+    window.PARTNER = {
+      country: "Taiwan",
+      partnerCompany: "Taiwan Screen Optronic",
+      partnerLogo: "assets/logo.png",
+      heroImage: "assets/hero-display.png",
+      bannerImage: "assets/banner.png",
+      contactEmail: "sales@twscreen.com",
+      ctaPrimaryLabel: "Request a Quote (Inquiry)",
+      ctaSecondaryLabel: "Product Line"
+    };
+  </script>
+
+  <style>
+    :root{
+      --bg:#08111f;
+      --text:#edf3ff;
+      --muted:#aebbd9;
+      --line:rgba(255,255,255,.12);
+      --accent:#63d8ff;
+      --accent2:#8dffb9;
+      --accent-dark:#07121d;
+      --shadow:0 22px 70px rgba(0,0,0,.34);
+      --radius:22px;
+      --max:1140px;
+      --topbar-height:72px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 10% -10%, rgba(99,216,255,.22), transparent 60%),
+        radial-gradient(760px 520px at 100% 6%, rgba(141,255,185,.12), transparent 60%),
+        linear-gradient(180deg, #07101d 0%, #091427 100%);
+      font-family:"Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      scroll-behavior:smooth;
+    }
+    body{overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,input,textarea{font:inherit}
+    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto;}
+    .section{padding:84px 0;}
+    .muted{color:var(--muted); line-height:1.65;}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:9px 14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 6px rgba(99,216,255,.12);
+    }
+    h1,h2,h3,p{margin:0}
+    h1{
+      font-size:clamp(38px, 5vw, 64px);
+      line-height:1.02;
+      letter-spacing:-.04em;
+    }
+    h2{
+      font-size:clamp(28px, 3vw, 40px);
+      line-height:1.08;
+      letter-spacing:-.03em;
+      margin-bottom:12px;
+    }
+    h3{font-size:20px; line-height:1.2;}
+    .divider{border-top:1px solid var(--line);}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      height:var(--topbar-height);
+      border-bottom:1px solid rgba(255,255,255,.09);
+      backdrop-filter:blur(16px);
+      background:rgba(8,17,31,.72);
+    }
+    .nav{
+      height:var(--topbar-height);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:220px;
+      font-weight:800;
+      letter-spacing:.01em;
+    }
+    .brand img{width:auto;height:38px}
+    .brand span{font-size:14px; line-height:1.3;}
+    .menu{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .menu a{
+      padding:9px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:14px;
+      transition:.22s ease;
+    }
+    .menu a:hover{
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+    }
+    .menu a.active{
+      color:var(--text);
+      background:rgba(99,216,255,.12);
+      border:1px solid rgba(99,216,255,.18);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:13px 18px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      cursor:pointer;
+      transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:var(--accent-dark);
+      box-shadow:0 14px 30px rgba(0,0,0,.32);
+    }
+    .btn.ghost{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.04);
+    }
+
+    .heroWrap{padding:34px 0 16px}
+    .hero{
+      display:grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+      gap:22px;
+      align-items:stretch;
+    }
+    .heroCard,
+    .heroMedia,
+    .spotlight,
+    .card,
+    .storyPanel,
+    .ctaBand,
+    .formWrap{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .heroCard{
+      position:relative;
+      overflow:hidden;
+      padding:30px;
+      background:
+        radial-gradient(640px 260px at 18% 0%, rgba(99,216,255,.18), transparent 64%),
+        radial-gradient(560px 260px at 92% 14%, rgba(141,255,185,.12), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+    }
+    .heroContent{position:relative; z-index:1}
+    .heroLead{
+      max-width:620px;
+      margin:16px 0 0;
+      font-size:18px;
+      line-height:1.75;
+      color:var(--muted);
+    }
+    .heroActions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+    .heroStats{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:12px;
+      margin-top:26px;
+    }
+    .stat{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.04);
+    }
+    .stat strong{
+      display:block;
+      font-size:24px;
+      line-height:1;
+      margin-bottom:8px;
+    }
+    .stat span{
+      display:block;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.55;
+    }
+    .heroDetails{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:10px;
+      margin-top:20px;
+    }
+    .pill{
+      padding:11px 13px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+    .heroMedia{
+      position:relative;
+      overflow:hidden;
+      min-height:540px;
+      background:rgba(255,255,255,.03);
+    }
+    .heroMedia img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .mediaBadge{
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:18px;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(7,16,29,.74);
+      backdrop-filter:blur(12px);
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+    }
+    .mediaBadge b{
+      display:block;
+      color:var(--text);
+      font-size:15px;
+      margin-bottom:4px;
+    }
+    .sectionHead{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      margin-bottom:24px;
+    }
+    .sectionLead{max-width:720px}
+
+    .spotlightGrid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:16px;
+    }
+    .spotlight{
+      padding:22px;
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+    }
+    .spotlightLabel{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(135deg, rgba(99,216,255,.2), rgba(141,255,185,.16));
+      font-weight:800;
+      margin-bottom:18px;
+    }
+    .spotlight p{margin-top:10px}
+
+    .grid4{display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:16px;}
+    .grid3{display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:16px;}
+    .card{
+      overflow:hidden;
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.025));
+      transition:transform .22s ease, border-color .22s ease, background .22s ease;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(99,216,255,.22);
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+    }
+    .cardMedia{
+      height:176px;
+      overflow:hidden;
+      border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+    }
+    .cardMedia img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .cardBody{padding:18px}
+    .mini{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.7;
+    }
+    .meta{
+      display:inline-flex;
+      margin-top:14px;
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:var(--text);
+      font-size:12px;
+    }
+    .iconMark{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:46px;
+      height:46px;
+      border-radius:15px;
+      background:linear-gradient(135deg, rgba(99,216,255,.22), rgba(141,255,185,.18));
+      border:1px solid rgba(255,255,255,.12);
+      font-weight:900;
+      margin-bottom:16px;
+    }
+
+    .storyGrid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    .gallery{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      min-height:100%;
+    }
+    .galleryLeft,
+    .gItem{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.03);
+    }
+    .galleryLeft{min-height:420px}
+    .galleryLeft img,
+    .gItem img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .galleryRight{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+    .gItem{min-height:202px}
+    .gLabel{
+      position:absolute;
+      left:14px;
+      bottom:14px;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(7,16,29,.7);
+      backdrop-filter:blur(10px);
+      font-size:13px;
+    }
+    .storyPanel{
+      padding:24px;
+      background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+    }
+    .storyList{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+    .storyItem{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.09);
+      background:rgba(255,255,255,.03);
+    }
+    .storyItem strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:15px;
+    }
+
+    .ctaBand{
+      padding:28px;
+      background:
+        radial-gradient(560px 220px at 10% 0%, rgba(99,216,255,.2), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+    }
+    .ctaBandInner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .ctaBandCopy{max-width:700px}
+    .ctaBandCopy p{margin-top:10px}
+
+    .formWrap{
+      overflow:hidden;
+      background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.02));
+    }
+    .formGrid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+    }
+    .formAside{
+      padding:26px;
+      border-right:1px solid var(--line);
+      background:rgba(255,255,255,.025);
+    }
+    .formMain{padding:26px}
+    .kpi{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:18px;
+    }
+    form{
+      display:grid;
+      gap:12px;
+      margin-top:8px;
+    }
+    .row2{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+    input,textarea{
+      width:100%;
+      padding:13px 14px;
+      color:var(--text);
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.035);
+      outline:none;
+      transition:border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    input:focus,textarea:focus{
+      border-color:rgba(99,216,255,.32);
+      background:rgba(255,255,255,.05);
+      box-shadow:0 0 0 4px rgba(99,216,255,.08);
+    }
+    input::placeholder,textarea::placeholder{color:rgba(174,187,217,.8)}
+    textarea{
+      min-height:140px;
+      resize:vertical;
+    }
+    .hint{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.7;
+    }
+    .formFooter{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:4px;
+    }
+    #form-response{
+      margin-top:12px;
+      font-weight:700;
+    }
+
+    .footer{
+      padding:30px 0 46px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+
+    @media(max-width:1080px){
+      .hero,
+      .storyGrid{
+        grid-template-columns:1fr;
+      }
+      .heroMedia{min-height:420px}
+      .grid4{grid-template-columns:repeat(2, minmax(0, 1fr));}
+      .spotlightGrid{grid-template-columns:1fr;}
+      .formGrid{grid-template-columns:1fr;}
+      .formAside{
+        border-right:none;
+        border-bottom:1px solid var(--line);
+      }
+    }
+    @media(max-width:760px){
+      .section{padding:68px 0}
+      .nav{align-items:flex-start; padding-top:14px; padding-bottom:14px; height:auto;}
+      .topbar{height:auto}
+      .brand{min-width:0}
+      .menu{justify-content:flex-start}
+      .heroCard,
+      .storyPanel,
+      .ctaBand,
+      .formAside,
+      .formMain{padding:22px}
+      .heroStats,
+      .heroDetails,
+      .grid3,
+      .grid4,
+      .row2,
+      .gallery,
+      .kpi{
+        grid-template-columns:1fr;
+      }
+      .galleryLeft,
+      .gItem,
+      .heroMedia{min-height:280px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" id="top">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <img id="brandLogo" src="assets/logo.png" alt="Partner Logo" />
+        <span>Taiwan Screen - The Best TFT LCD Solution Provider</span>
+      </a>
+
+      <nav class="menu" aria-label="Primary">
+        <a href="#hero" class="scroll-link">Profile</a>
+        <a href="#products" class="scroll-link">Products</a>
+        <a href="#applications" class="scroll-link">Applications</a>
+        <a href="#solutions" class="scroll-link">Solutions</a>
+        <a href="#inquiry" class="scroll-link">Inquiry</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="heroWrap">
+    <div class="container hero" id="hero">
+      <div class="heroCard">
+        <div class="heroContent">
+          <span class="eyebrow"><span class="dot"></span> Touch • TFT LCD • AD Board • Display Kits</span>
+          <h1>Stable, reliable display solutions that are easier to evaluate and faster to deploy.</h1>
+          <p class="heroLead">
+            TWScreen provides multi-brand TFT LCD panels and complete display integration for industrial,
+            medical, transportation, outdoor, and custom device projects.
+          </p>
+
+          <div class="heroActions">
+            <a class="btn primary scroll-link" href="#inquiry" id="ctaPrimary">Request a Quote (Inquiry)</a>
+            <a class="btn ghost scroll-link" href="#products" id="ctaSecondary">Product Line</a>
+          </div>
+
+          <div class="heroStats">
+            <div class="stat">
+              <strong>5.7" - 32"</strong>
+              <span>Multi-brand TFT LCD options for new development and long-life projects.</span>
+            </div>
+            <div class="stat">
+              <strong>Touch + Board</strong>
+              <span>PCAP, resistive touch, and AD board kits prepared for faster evaluation.</span>
+            </div>
+            <div class="stat">
+              <strong>One Window</strong>
+              <span>Panels, accessories, matching guidance, and alternatives from one team.</span>
+            </div>
+          </div>
+
+          <div class="heroDetails">
+            <div class="pill">Fast and complete TFT LCD kit solutions with panel, touch, board, and cable support.</div>
+            <div class="pill">Coverage across AUO, Innolux, LG, BOE, and other mainstream brands.</div>
+            <div class="pill">Support for USB-C, HDMI, VGA, DVI, DisplayPort, and project-specific interfaces.</div>
+            <div class="pill">Built to reduce sourcing friction and compatibility uncertainty during integration.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="heroMedia" aria-label="Hero image">
+        <img id="heroImage" src="assets/hero-display.png" alt="Display solution preview" />
+        <div class="mediaBadge">
+          <b>Fast and complete TFT LCD kit support</b>
+          We help customers shortlist the right models, avoid compatibility issues, and move from sample to production with less friction.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section" id="why">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2>Why teams choose TWSCREEN</h2>
+        <p class="muted">
+          The page should answer three questions fast: what you supply, where it fits, and how you reduce project risk.
+        </p>
+      </div>
+    </div>
+
+    <div class="spotlightGrid">
+      <article class="spotlight">
+        <div class="spotlightLabel">01</div>
+        <h3>Multi-brand sourcing with practical model guidance</h3>
+        <p class="muted">
+          We compare mainstream panels by size, interface, brightness, lifecycle, and availability so your team can shortlist faster.
+        </p>
+      </article>
+
+      <article class="spotlight">
+        <div class="spotlightLabel">02</div>
+        <h3>Integrated touch and display kit support</h3>
+        <p class="muted">
+          Beyond panels, we combine touch, optical bonding, AD boards, and accessories into solutions that are easier to validate.
+        </p>
+      </article>
+
+      <article class="spotlight">
+        <div class="spotlightLabel">03</div>
+        <h3>Supply continuity for real product programs</h3>
+        <p class="muted">
+          When shortage, change, or EOL risk appears, we help present alternatives clearly so internal approval moves faster.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="products" class="container section">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2>Products</h2>
+        <p class="muted">
+          Clear product groups make the catalog easier to scan. Each card works as a direct entry point for recommendation, sampling, or future product links.
+        </p>
+      </div>
+      <a class="btn ghost scroll-link" href="#inquiry">Get a recommendation</a>
+    </div>
+
+    <div class="grid4">
+      <article class="card">
+        <div class="cardMedia">
+          <img src="assets/touch-display.png" alt="Touch Display" />
+        </div>
+        <div class="cardBody">
+          <h3>Touch Display</h3>
+          <p class="mini">PCAP and resistive touch solutions integrated with TFT LCD panels for embedded and industrial use.</p>
+          <span class="meta">Best for HMI and interactive devices</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardMedia">
+          <img src="assets/ad-board.png" alt="AD Board" />
+        </div>
+        <div class="cardBody">
+          <h3>AD Board</h3>
+          <p class="mini">Driver boards supporting HDMI, VGA, DVI, DisplayPort and USB-C, depending on the model and project setup.</p>
+          <span class="meta">Bring-up faster with matching support</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardMedia">
+          <img src="assets/display-kits.png" alt="Display Kits" />
+        </div>
+        <div class="cardBody">
+          <h3>Display Kits</h3>
+          <p class="mini">Complete kits including LCD, AD board, cables, and accessories for evaluation, demos, and rapid prototyping.</p>
+          <span class="meta">Ideal for sample stage and quick testing</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardMedia">
+          <img src="assets/tft-lcd.png" alt="TFT LCD" />
+        </div>
+        <div class="cardBody">
+          <h3>TFT LCD Panels</h3>
+          <p class="mini">6.5"-32" panels from AUO, LG, INNOLUX, BOE and more, with industrial lifecycle focus and alternative suggestions.</p>
+          <span class="meta">For long-life and spec-driven projects</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="applications" class="container section">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2>Applications</h2>
+        <p class="muted">
+          Visual scenarios make the page feel more concrete and trustworthy. This section now appears earlier so visitors understand where your solutions are used before reading process details.
+        </p>
+      </div>
+      <a class="btn ghost scroll-link" href="#inquiry">Tell us your use case</a>
+    </div>
+
+    <div class="storyGrid">
+      <div class="gallery">
+        <div class="galleryLeft">
+          <img src="assets/app-industrial.png" alt="Industrial application" />
+          <div class="gLabel">Industrial Automation</div>
+        </div>
+
+        <div class="galleryRight">
+          <div class="gItem">
+            <img src="assets/app-medical.png" alt="Medical application" />
+            <div class="gLabel">Medical / HMI</div>
+          </div>
+          <div class="gItem">
+            <img src="assets/app-transport.png" alt="Transportation application" />
+            <div class="gLabel">Transportation / Outdoor</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="storyPanel">
+        <span class="eyebrow"><span class="dot"></span> Project Fit</span>
+        <h3 style="margin-top:16px;">Built for products that need reliability, visibility, and supply flexibility.</h3>
+        <p class="muted" style="margin-top:12px;">
+          Replace these visuals with partner case images later, but even now the section works as a quick explanation of where your display solutions are used.
+        </p>
+
+        <div class="storyList">
+          <div class="storyItem">
+            <strong>Industrial systems</strong>
+            <span class="muted">Panels and touch combinations for machinery UI, factory terminals, and equipment control.</span>
+          </div>
+          <div class="storyItem">
+            <strong>Medical interfaces</strong>
+            <span class="muted">Clear viewing, touch responsiveness, and practical integration support for device displays.</span>
+          </div>
+          <div class="storyItem">
+            <strong>Transportation and outdoor use</strong>
+            <span class="muted">Brightness, bonding, and environmental considerations for more demanding field conditions.</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <section id="banner" class="container" style="padding:0 0 12px;">
+    <div style="border:1px solid var(--line); border-radius:22px; overflow:hidden; background:rgba(255,255,255,.03); box-shadow:var(--shadow);">
+      <img id="bannerImage" src="assets/banner.png" alt="Banner Image" style="width:100%; max-height:420px; object-fit:cover;" />
+    </div>
+  </section>
+
+  <section id="solutions" class="container section">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2>Solutions</h2>
+        <p class="muted">
+          After visitors understand the product scope and application fit, this section explains how you reduce selection risk, integration time, and supply uncertainty.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <article class="card">
+        <div class="cardBody">
+          <div class="iconMark">BOM</div>
+          <h3>Model Selection (BOM / Alternatives)</h3>
+          <p class="mini">
+            Based on size, brightness, interface, temperature range, and availability risk, we propose recommended models and compatible alternatives.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardBody">
+          <div class="iconMark">OCA</div>
+          <h3>Touch + Optical Bonding Integration</h3>
+          <p class="mini">
+            OCA/LOCA bonding, custom cover glass, and mechanical integration for improved readability, fewer reflections, and better reliability.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardBody">
+          <div class="iconMark">LD</div>
+          <h3>Prototype to Production Delivery</h3>
+          <p class="mini">
+            Fast sampling, transparent lead time, and shipping support aligned with your test standards, packaging needs, and delivery requirements.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="container section" style="padding-top:0;">
+    <div class="ctaBand">
+      <div class="ctaBandInner">
+        <div class="ctaBandCopy">
+          <h2 style="margin:0;">Tell us the size, interface, brightness, and use case.</h2>
+          <p class="muted">
+            Start with requirements, not part numbers. We can recommend suitable models and alternatives more quickly when the target conditions are clear.
+          </p>
+        </div>
+        <a class="btn primary scroll-link" href="#inquiry">Start Your Inquiry</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="inquiry" class="container section" style="padding-top:0;">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2>Send an Inquiry</h2>
+        <p class="muted">
+          Please fill in the form below. We will reply by email.<br />
+          Start with requirements, not part numbers.<br />
+          Share size, resolution, brightness, interface, temperature range, and use case - we'll recommend suitable models and alternatives.
+        </p>
+      </div>
+    </div>
+
+    <div class="formWrap">
+      <div class="formGrid">
+        <aside class="formAside">
+          <h3 style="margin-top:0;">What you'll get</h3>
+          <p class="muted" style="margin-top:10px;">
+            Typically within <b>1-2 business days</b>:
+          </p>
+          <div class="kpi">
+            <div class="pill">Model recommendation</div>
+            <div class="pill">Alternative options</div>
+            <div class="pill">Lead time guidance</div>
+            <div class="pill">Quick response</div>
+          </div>
+
+          <div class="divider" style="margin-top:20px;"></div>
+          <p class="hint">
+            Prefer email? You can also contact: <b id="salesEmail">sales@twscreen.com</b><br />
+            (You can customize this per partner site.)
+          </p>
+        </aside>
+
+        <div class="formMain">
+          <form id="inquiry-form" action="https://formspree.io/f/mnjdkbzn" method="POST">
+            <div class="row2">
+              <input type="text" name="name" placeholder="Your Name *" required />
+              <input type="text" name="company" placeholder="Company Name" />
+            </div>
+
+            <input type="telephone" name="telephone" placeholder="telephone" />
+            <input type="email" name="email" placeholder="Email *" required />
+
+            <textarea name="message" placeholder="Your Inquiry *" required></textarea>
+
+            <input type="hidden" id="partner_country" name="partner_country" value="Taiwan" />
+            <input type="hidden" id="partner_company" name="partner_company" value="Taiwan Screen Optronic" />
+            <input type="hidden" id="_subject" name="_subject" value="" />
+            <input type="hidden" name="_cc" value="ray@twscreen.com,gina@twscreen.com" />
+
+            <div class="formFooter">
+              <button type="submit" class="btn primary">Send Inquiry</button>
+              <span class="muted" style="font-size:13px;">No account needed. We'll reply by email.</span>
+            </div>
+          </form>
+
+          <div id="form-response"></div>
+
+          <p class="hint">
+            Tip: If you already have a panel model number, include it in the message.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    &copy; <span id="year"></span> TWSCREEN. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    (function applyPartner(){
+      if(!window.PARTNER) return;
+
+      const logo = document.getElementById("brandLogo");
+      const hero = document.getElementById("heroImage");
+      const banner = document.getElementById("bannerImage");
+      const salesEmail = document.getElementById("salesEmail");
+
+      if (window.PARTNER.partnerLogo) logo.src = window.PARTNER.partnerLogo;
+      if (window.PARTNER.heroImage) hero.src = window.PARTNER.heroImage;
+      if (window.PARTNER.bannerImage) banner.src = window.PARTNER.bannerImage;
+      if (window.PARTNER.contactEmail) salesEmail.textContent = window.PARTNER.contactEmail;
+
+      const cta1 = document.getElementById("ctaPrimary");
+      const cta2 = document.getElementById("ctaSecondary");
+      if (window.PARTNER.ctaPrimaryLabel) cta1.textContent = window.PARTNER.ctaPrimaryLabel;
+      if (window.PARTNER.ctaSecondaryLabel) cta2.textContent = window.PARTNER.ctaSecondaryLabel;
+
+      const pc = document.getElementById("partner_country");
+      const pco = document.getElementById("partner_company");
+      if (pc && window.PARTNER.country) pc.value = window.PARTNER.country;
+      if (pco && window.PARTNER.partnerCompany) pco.value = window.PARTNER.partnerCompany;
+    })();
+
+    document.querySelectorAll(".scroll-link").forEach(function(link){
+      link.addEventListener("click", function(e){
+        const href = this.getAttribute("href");
+        if(!href || !href.startsWith("#")) return;
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetEl = document.getElementById(targetId);
+        if(!targetEl) return;
+
+        const rawOffset = getComputedStyle(document.documentElement).getPropertyValue("--topbar-height") || "72px";
+        const offset = parseInt(rawOffset, 10) || 72;
+        const topPos = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: topPos, behavior: "smooth" });
+      });
+    });
+
+    const form = document.getElementById("inquiry-form");
+    const responseDiv = document.getElementById("form-response");
+
+    form.addEventListener("submit", async function(e){
+      e.preventDefault();
+      responseDiv.style.color = "#b8c4e6";
+      responseDiv.textContent = "Sending...";
+
+      const nameValRaw = (form.querySelector('input[name="name"]')?.value || "").trim();
+      const nameVal = nameValRaw ? nameValRaw.replace(/\s+/g, " ") : "Inquiry";
+
+      const pad = function(n){ return String(n).padStart(2, "0"); };
+      const now = new Date();
+      const ts = now.getFullYear() + "-" +
+        pad(now.getMonth() + 1) + "-" +
+        pad(now.getDate()) + " " +
+        pad(now.getHours()) + ":" +
+        pad(now.getMinutes()) + ":" +
+        pad(now.getSeconds());
+
+      const subjEl = document.getElementById("_subject");
+      if (subjEl) subjEl.value = nameVal + " | " + ts + " (" + Date.now() + ")";
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { Accept: "application/json" }
+        });
+
+        if (res.ok) {
+          responseDiv.style.color = "#7cffb2";
+          responseDiv.textContent = "Your inquiry has been sent! We will reply by email.";
+          form.reset();
+
+          const pc = document.getElementById("partner_country");
+          const pco = document.getElementById("partner_company");
+          if (pc && window.PARTNER && window.PARTNER.country) pc.value = window.PARTNER.country;
+          if (pco && window.PARTNER && window.PARTNER.partnerCompany) pco.value = window.PARTNER.partnerCompany;
+
+          const subj = document.getElementById("_subject");
+          if (subj) subj.value = "";
+        } else {
+          let msg = "Please try again.";
+          try{
+            const data = await res.json();
+            msg = data.errors ? data.errors.map(function(item){ return item.message; }).join(", ") : msg;
+          }catch(_){}
+          responseDiv.style.color = "#ff6b6b";
+          responseDiv.textContent = "Error: " + msg;
+        }
+      } catch(err){
+        responseDiv.style.color = "#ff6b6b";
+        responseDiv.textContent = "Network error, please try again.";
+      }
+    });
+
+    const sections = ["hero","products","applications","solutions","inquiry"]
+      .map(function(id){ return document.getElementById(id); })
+      .filter(Boolean);
+    const navLinks = Array.from(document.querySelectorAll(".menu a.scroll-link"));
+
+    const io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          navLinks.forEach(function(a){ a.classList.remove("active"); });
+          const active = navLinks.find(function(a){
+            return a.getAttribute("href") === "#" + entry.target.id;
+          });
+          if(active) active.classList.add("active");
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0.02 });
+
+    sections.forEach(function(section){ io.observe(section); });
+  </script>
+</body>
+</html>
