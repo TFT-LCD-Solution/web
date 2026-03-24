@@ -1,18 +1,18 @@
-<!doctype html>
-<html lang="en">
-<head>
+<!doctype html> <!-- 告訴瀏覽器這是一份HTML文件 -->
+<html lang="en"> <!-- 頁面預設語言為英文(非最終固定值) -->
+<head> <!-- 給瀏覽器和搜尋引擎看的, 不是給訪客看的 -->
   <!-- =========================
     基本 SEO / 網站基礎設定
     用途：設定語系、標題、描述、社群分享、搜尋引擎索引等資訊
   ========================= -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title id="seoTitle">TWSCREEN | Display Solutions</title>
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <meta id="metaDescription" name="description" content="TWSCREEN provides Touch Displays, AD Boards, Display Kits and TFT LCD solutions for global partners." />
-  <meta id="metaKeywords" name="keywords" content="TFT LCD, touch display, AD board, display kit, industrial display, TWSCREEN" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta property="og:type" content="website" />
+  <meta charset="utf-8" /> <!-- 字元編碼, 用uth-8可支援多數語言 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- 在手機版中自動適應寬度 -->
+  <title id="seoTitle">TWSCREEN | Display Solutions</title> <!-- 瀏覽器分頁標題, Google搜尋結果主標題 -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" /> <!-- 網頁小圖示 -->
+  <meta id="metaDescription" name="description" content="TWSCREEN provides Touch Displays, AD Boards, Display Kits and TFT LCD solutions for global partners." /> <!-- 搜尋結果摘要 -->
+  <meta id="metaKeywords" name="keywords" content="TFT LCD, touch display, AD board, display kit, industrial display, TWSCREEN" /> <!-- SEO關鍵字, 目前影響低 -->
+  <meta name="robots" content="index,follow,max-image-preview:large" /> <!-- 讓搜尋引擎知道這頁可索引, 可追縱, 圖片預覽可放大 -->
+  <meta property="og:type" content="website" /> <!-- 本趨勢將網址貼到社群平台時顯示的標題敘述與圖片 -->
   <meta id="ogTitle" property="og:title" content="TWSCREEN | Display Solutions" />
   <meta id="ogDescription" property="og:description" content="TWSCREEN provides Touch Displays, AD Boards, Display Kits and TFT LCD solutions for global partners." />
   <meta id="ogImage" property="og:image" content="assets/hero-display.png" />
@@ -21,7 +21,8 @@
   <meta id="twitterDescription" name="twitter:description" content="TWSCREEN provides Touch Displays, AD Boards, Display Kits and TFT LCD solutions for global partners." />
   <meta id="twitterImage" name="twitter:image" content="assets/hero-display.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link id="canonicalLink" rel="canonical" href="https://example.com/" />
+  <link id="canonicalLink" rel="canonical" href="https://example.com/" /> <!-- 進階SEO區塊, Example.com需換成正式網址 -->
+  <!-- 以下為進階SEO區塊, JSON-LD結構化資料,需把url換成正式以及其他資料需更換, context則不需要更動 -->
   <script id="structuredData" type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -38,6 +39,7 @@
       多國經銷商快速設定區
       用途：之後要換國家、換經銷商、換語言、換 SEO，只需修改這裡
     ========================= */
+<!-- 核心設定中心, 更改這裡即可 -->
     window.SITE_CONFIG = {
       locale: "en",
       htmlLang: "en",
@@ -49,9 +51,11 @@
       contactEmail: "sales@twscreen.com",
       contactPhone: "+886-0-0000-0000",
       contactAddress: "Taiwan",
-      partnerLogo: "assets/logo.png",
+<!-- 核心設定中心, 圖片 -->
+      partnerLogo: "assets/logo.png", 
       heroImage: "assets/hero-display.png",
       bannerImage: "assets/banner.png",
+<!-- 核心設定中心, SEO -->
       seo: {
         title: "TWSCREEN | Display Solutions for Global Partners",
         description: "TWSCREEN provides TFT LCD panels, touch displays, AD boards, and display kits for industrial, medical, transportation, and custom device projects.",
@@ -59,6 +63,7 @@
         canonical: "https://example.com/",
         ogImage: "assets/hero-display.png"
       },
+<!-- 核心設定中心, 頁面文字內容 -->
       content: {
         navProfile: "Profile",
         navProducts: "Products",
@@ -149,22 +154,22 @@
       }
     };
   </script>
-
+<!-- 網站CSS樣式 -->
   <style>
     :root{
-      --bg:#08111f;
-      --text:#edf3ff;
-      --muted:#aebbd9;
+      --bg:#08111f; <!-- 背景色 -->
+      --text:#edf3ff; <!-- 主文字色 -->
+      --muted:#aebbd9; <!-- 次文字色 -->
       --line:rgba(255,255,255,.12);
-      --accent:#63d8ff;
+      --accent:#63d8ff; <!-- 主漸層色 -->
       --accent2:#8dffb9;
       --accent-dark:#07121d;
       --shadow:0 22px 70px rgba(0,0,0,.34);
-      --radius:22px;
-      --max:1140px;
-      --topbar-height:72px;
+      --radius:22px; <!-- 圓角 -->
+      --max:1140px; <!-- 最大內容寬 -->
+      --topbar-height:72px; <!-- 導覽列高度 -->
     }
-
+ <!-- 穩定排版基礎設定 -->
     *{box-sizing:border-box}
     html,body{
       margin:0;
@@ -217,7 +222,7 @@
     }
     h3{font-size:20px; line-height:1.2;}
     .divider{border-top:1px solid var(--line);}
-
+ <!-- 元件樣式區塊模組化 -->
     .topbar{
       position:sticky;
       top:0;
@@ -642,7 +647,7 @@
       font-size:13px;
       text-align:center;
     }
-
+ <!-- 響應式自動排版, Hero左右兩欄變一欄, Product四欄變兩欄在變一欄, 表單左右兩區變上下堆疊 -->
     @media(max-width:1080px){
       .hero,
       .storyGrid{
@@ -688,14 +693,15 @@
     頂部導覽區
     用途：顯示經銷商品牌 Logo、品牌標語、主選單，方便快速切換段落
   ========================= -->
+<!-- 頂部導覽區 -->
   <header class="topbar" id="top">
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Back to top">
         <!-- 建議尺寸：Logo 最佳原稿 320 x 96 px，透明背景 PNG / SVG -->
-        <img id="brandLogo" src="assets/logo.png" alt="Partner Logo" />
-        <span id="brandLine">Taiwan Screen - The Best TFT LCD Solution Provider</span>
+        <img id="brandLogo" src="assets/logo.png" alt="Partner Logo" /> <!-- Logo -->
+        <span id="brandLine">Taiwan Screen - The Best TFT LCD Solution Provider</span> <!-- 頂部Logo旁邊的小標 -->
       </a>
-
+<!-- 頂部導覽連結, 跳到同頁中對應的Section -->
       <nav class="menu" aria-label="Primary">
         <a href="#hero" class="scroll-link" id="navProfile">Profile</a>
         <a href="#products" class="scroll-link" id="navProducts">Products</a>
@@ -710,22 +716,23 @@
     首屏主視覺區
     用途：快速說明品牌提供的方案、主要 CTA、關鍵賣點與主圖
   ========================= -->
+<!-- 網頁最上方顯示區塊 -->
   <section class="heroWrap">
     <div class="container hero" id="hero">
       <div class="heroCard">
         <div class="heroContent">
-          <span class="eyebrow" id="heroEyebrow"><span class="dot"></span> Touch • TFT LCD • AD Board • Display Kits</span>
-          <h1 id="heroTitle">Stable, reliable display solutions that are easier to evaluate and faster to deploy.</h1>
-          <p class="heroLead" id="heroLead">
+          <span class="eyebrow" id="heroEyebrow"><span class="dot"></span> Touch • TFT LCD • AD Board • Display Kits</span> <!-- 上方小標籤 -->
+          <h1 id="heroTitle">Stable, reliable display solutions that are easier to evaluate and faster to deploy.</h1> <!-- 主標題 -->
+          <p class="heroLead" id="heroLead"> <!-- 主說明 -->
             TWScreen provides multi-brand TFT LCD panels and complete display integration for industrial,
             medical, transportation, outdoor, and custom device projects.
           </p>
 
           <div class="heroActions">
-            <a class="btn primary scroll-link" href="#inquiry" id="ctaPrimary">Request a Quote (Inquiry)</a>
-            <a class="btn ghost scroll-link" href="#products" id="ctaSecondary">Product Line</a>
+            <a class="btn primary scroll-link" href="#inquiry" id="ctaPrimary">Request a Quote (Inquiry)</a> <!-- 左邊按鈕 -->
+            <a class="btn ghost scroll-link" href="#products" id="ctaSecondary">Product Line</a> <!-- 右邊按鈕 -->
           </div>
-
+<!-- 三個重點數值 -->
           <div class="heroStats">
             <div class="stat">
               <strong id="stat1Title">5.7" - 32"</strong>
@@ -740,7 +747,7 @@
               <span id="stat3Text">Panels, accessories, matching guidance, and alternatives from one team.</span>
             </div>
           </div>
-
+<!-- 四個補充賣點 -->
           <div class="heroDetails">
             <div class="pill" id="heroDetail1">Fast and complete TFT LCD kit solutions with panel, touch, board, and cable support.</div>
             <div class="pill" id="heroDetail2">Coverage across AUO, Innolux, LG, BOE, and other mainstream brands.</div>
@@ -749,13 +756,13 @@
           </div>
         </div>
       </div>
-
+<!-- 網頁最上方右邊圖片 -->
       <div class="heroMedia" aria-label="Hero image">
         <!-- 建議尺寸：Hero 主圖最佳原稿 1600 x 1200 px -->
         <img id="heroImage" src="assets/hero-display.png" alt="Display solution preview" />
         <div class="mediaBadge">
-          <b id="heroBadgeTitle">Fast and complete TFT LCD kit support</b>
-          <span id="heroBadgeText">We help customers shortlist the right models, avoid compatibility issues, and move from sample to production with less friction.</span>
+          <b id="heroBadgeTitle">Fast and complete TFT LCD kit support</b> <!-- 標題文字 -->
+          <span id="heroBadgeText">We help customers shortlist the right models, avoid compatibility issues, and move from sample to production with less friction.</span> <!-- 說明文字 -->
         </div>
       </div>
     </div>
