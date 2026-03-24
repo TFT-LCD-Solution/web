@@ -1106,16 +1106,18 @@
     前端設定套用與互動腳本
     用途：套用多國設定、SEO、語言內容、表單送出與選單高亮
   ========================= -->
+<!-- 前端設定套用與互動腳本 -->
   <script>
+<!-- 自動更新頁尾年份 -->
     document.getElementById("year").textContent = new Date().getFullYear();
-
+<!-- 自動把SITE_CONFIG裡的資料套用到頁面上 -->
     (function applySiteConfig(){
       if(!window.SITE_CONFIG) return;
 
       const config = window.SITE_CONFIG;
-      const logo = document.getElementById("brandLogo");
-      const hero = document.getElementById("heroImage");
-      const banner = document.getElementById("bannerImage");
+      const logo = document.getElementById("brandLogo"); <!-- 換Logo -->
+      const hero = document.getElementById("heroImage"); <!-- 換圖片 -->
+      const banner = document.getElementById("bannerImage"); <!-- 換Banner -->
       const salesEmail = document.getElementById("salesEmail");
       const contactPhoneText = document.getElementById("contactPhoneText");
       const contactAddressText = document.getElementById("contactAddressText");
@@ -1272,7 +1274,7 @@
       if (pc && config.country) pc.value = config.country;
       if (pco && config.partnerCompany) pco.value = config.partnerCompany;
     })();
-
+ <!-- 平滑捲動區塊 -->
     document.querySelectorAll(".scroll-link").forEach(function(link){
       link.addEventListener("click", function(e){
         const href = this.getAttribute("href");
@@ -1288,7 +1290,7 @@
         window.scrollTo({ top: topPos, behavior: "smooth" });
       });
     });
-
+ <!-- Formspree AJAX表單送出 -->
     const form = document.getElementById("inquiry-form");
     const responseDiv = document.getElementById("form-response");
 
@@ -1352,7 +1354,7 @@
       .map(function(id){ return document.getElementById(id); })
       .filter(Boolean);
     const navLinks = Array.from(document.querySelectorAll(".menu a.scroll-link"));
-
+<!-- 觀察滑動到哪個Section時 導覽列對應項目加上Actice Class -->
     const io = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if(entry.isIntersecting){
