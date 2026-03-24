@@ -39,7 +39,7 @@
       多國經銷商快速設定區
       用途：之後要換國家、換經銷商、換語言、換 SEO，只需修改這裡
     ========================= */
-<!-- 核心設定中心, 更改這裡即可 -->
+// 核心設定中心, 更改這裡即可
     window.SITE_CONFIG = {
       locale: "en",
       htmlLang: "en",
@@ -51,11 +51,11 @@
       contactEmail: "sales@twscreen.com",
       contactPhone: "+886-0-0000-0000",
       contactAddress: "Taiwan",
-<!-- 核心設定中心, 圖片 -->
+//核心設定中心, 圖片
       partnerLogo: "assets/logo.png", 
       heroImage: "assets/hero-display.png",
       bannerImage: "assets/banner.png",
-<!-- 核心設定中心, SEO -->
+//核心設定中心, SEO
       seo: {
         title: "TWSCREEN | Display Solutions for Global Partners",
         description: "TWSCREEN provides TFT LCD panels, touch displays, AD boards, and display kits for industrial, medical, transportation, and custom device projects.",
@@ -63,7 +63,7 @@
         canonical: "https://example.com/",
         ogImage: "assets/hero-display.png"
       },
-<!-- 核心設定中心, 頁面文字內容 -->
+//核心設定中心, 頁面文字內容
       content: {
         navProfile: "Profile",
         navProducts: "Products",
@@ -157,17 +157,17 @@
 <!-- 網站CSS樣式 -->
   <style>
     :root{
-      --bg:#08111f; <!-- 背景色 -->
-      --text:#edf3ff; <!-- 主文字色 -->
-      --muted:#aebbd9; <!-- 次文字色 -->
+      --bg:#08111f; /* 背景色 */
+      --text:#edf3ff; /* 主文字色 */
+      --muted:#aebbd9; /* 次文字色 */
       --line:rgba(255,255,255,.12);
-      --accent:#63d8ff; <!-- 主漸層色 -->
+      --accent:#63d8ff; /* 主漸層色 */
       --accent2:#8dffb9;
       --accent-dark:#07121d;
       --shadow:0 22px 70px rgba(0,0,0,.34);
-      --radius:22px; <!-- 圓角 -->
-      --max:1140px; <!-- 最大內容寬 -->
-      --topbar-height:72px; <!-- 導覽列高度 -->
+      --radius:22px; /* 圓角 */
+      --max:1140px; /* 最大內容寬 */
+      --topbar-height:72px; /* 導覽列高度 */
     }
  <!-- 穩定排版基礎設定 -->
     *{box-sizing:border-box}
@@ -222,7 +222,7 @@
     }
     h3{font-size:20px; line-height:1.2;}
     .divider{border-top:1px solid var(--line);}
- <!-- 元件樣式區塊模組化 -->
+/* 元件樣式區塊模組化 */
     .topbar{
       position:sticky;
       top:0;
@@ -647,7 +647,7 @@
       font-size:13px;
       text-align:center;
     }
- <!-- 響應式自動排版, Hero左右兩欄變一欄, Product四欄變兩欄在變一欄, 表單左右兩區變上下堆疊 -->
+/* 響應式自動排版, Hero左右兩欄變一欄, Product四欄變兩欄在變一欄, 表單左右兩區變上下堆疊 */
     @media(max-width:1080px){
       .hero,
       .storyGrid{
@@ -1108,16 +1108,16 @@
   ========================= -->
 <!-- 前端設定套用與互動腳本 -->
   <script>
-<!-- 自動更新頁尾年份 -->
+/* 自動更新頁尾年份 */
     document.getElementById("year").textContent = new Date().getFullYear();
-<!-- 自動把SITE_CONFIG裡的資料套用到頁面上 -->
+/* 自動把SITE_CONFIG裡的資料套用到頁面上 */
     (function applySiteConfig(){
       if(!window.SITE_CONFIG) return;
 
       const config = window.SITE_CONFIG;
-      const logo = document.getElementById("brandLogo"); <!-- 換Logo -->
-      const hero = document.getElementById("heroImage"); <!-- 換圖片 -->
-      const banner = document.getElementById("bannerImage"); <!-- 換Banner -->
+      const logo = document.getElementById("brandLogo"); /* 換Logo */
+      const hero = document.getElementById("heroImage"); /* 換圖片 */
+      const banner = document.getElementById("bannerImage"); /* 換Banner */
       const salesEmail = document.getElementById("salesEmail");
       const contactPhoneText = document.getElementById("contactPhoneText");
       const contactAddressText = document.getElementById("contactAddressText");
@@ -1274,7 +1274,7 @@
       if (pc && config.country) pc.value = config.country;
       if (pco && config.partnerCompany) pco.value = config.partnerCompany;
     })();
- <!-- 平滑捲動區塊 -->
+/* 平滑捲動區塊 */
     document.querySelectorAll(".scroll-link").forEach(function(link){
       link.addEventListener("click", function(e){
         const href = this.getAttribute("href");
@@ -1290,7 +1290,7 @@
         window.scrollTo({ top: topPos, behavior: "smooth" });
       });
     });
- <!-- Formspree AJAX表單送出 -->
+/* Formspree AJAX表單送出 */
     const form = document.getElementById("inquiry-form");
     const responseDiv = document.getElementById("form-response");
 
@@ -1354,7 +1354,7 @@
       .map(function(id){ return document.getElementById(id); })
       .filter(Boolean);
     const navLinks = Array.from(document.querySelectorAll(".menu a.scroll-link"));
-<!-- 觀察滑動到哪個Section時 導覽列對應項目加上Actice Class -->
+/* 觀察滑動到哪個Section時 導覽列對應項目加上Actice Class */
     const io = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if(entry.isIntersecting){
