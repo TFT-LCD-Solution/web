@@ -1,0 +1,1373 @@
+<!doctype html> <!-- 告訴瀏覽器這是一份HTML文件 -->
+<html lang="en"> <!-- 頁面預設語言為英文(非最終固定值) -->
+<head> <!-- 給瀏覽器和搜尋引擎看的, 不是給訪客看的 -->
+  <!-- =========================
+    基本 SEO / 網站基礎設定
+    用途：設定語系、標題、描述、社群分享、搜尋引擎索引等資訊
+  ========================= -->
+  <meta charset="utf-8" /> <!-- 字元編碼, 用utf-8可支援多數語言 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- 在手機版中自動適應寬度 -->
+  <title id="seoTitle">TWSCREEN | Display Solutions</title> <!-- 瀏覽器分頁標題, Google搜尋結果主標題 -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" /> <!-- 網頁小圖示 -->
+  <meta id="metaDescription" name="description" content="TWSCREEN provides Touch Displays, AD Boards, Display Kits and TFT LCD solutions for global partners." /> <!-- 搜尋結果摘要 -->
+  <meta id="metaKeywords" name="keywords" content="TFT LCD, touch display, AD board, display kit, industrial display, TWSCREEN" /> <!-- SEO關鍵字, 目前影響低 -->
+  <meta name="robots" content="index,follow,max-image-preview:large" /> <!-- 讓搜尋引擎知道這頁可索引, 可追縱, 圖片預覽可放大 -->
+  <meta property="og:type" content="website" /> <!-- 本區是將網址貼到社群平台時顯示的標題敘述與圖片 -->
+  <meta id="ogTitle" property="og:title" content="TWSCREEN | Display Solutions" />
+  <meta id="ogDescription" property="og:description" content="TWSCREEN provides Touch Displays, AD Boards, Display Kits and TFT LCD solutions for global partners." />
+  <meta id="ogImage" property="og:image" content="assets/hero-display.png" />
+  <meta id="ogLocale" property="og:locale" content="en_US" />
+  <meta id="twitterTitle" name="twitter:title" content="TWSCREEN | Display Solutions" />
+  <meta id="twitterDescription" name="twitter:description" content="TWSCREEN provides Touch Displays, AD Boards, Display Kits and TFT LCD solutions for global partners." />
+  <meta id="twitterImage" name="twitter:image" content="assets/hero-display.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link id="canonicalLink" rel="canonical" href="https://example.com/" /> <!-- 進階SEO區塊, Example.com需換成正式網址 -->
+  <!-- 以下為進階SEO區塊, JSON-LD結構化資料,需把url換成正式以及其他資料需更換, context則不需要更動 -->
+  <script id="structuredData" type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TWSCREEN",
+      "url": "https://example.com/",
+      "logo": "assets/logo.png",
+      "email": "sales@twscreen.com"
+    }
+  </script>
+
+  <script>
+    /* =========================
+      多國經銷商快速設定區
+      用途：之後要換國家、換經銷商、換語言、換 SEO，只需修改這裡
+    ========================= */
+// 核心設定中心, 更改這裡即可
+    window.SITE_CONFIG = {
+      locale: "en",
+      htmlLang: "en",
+      ogLocale: "en_US",
+      country: "Taiwan",
+      partnerCompany: "Taiwan Screen Optronic",
+      siteName: "TWSCREEN",
+      brandLine: "Taiwan Screen - The Best TFT LCD Solution Provider",
+      contactEmail: "sales@twscreen.com",
+      contactPhone: "+886-0-0000-0000",
+      contactAddress: "Taiwan",
+//核心設定中心, 圖片
+      partnerLogo: "assets/logo.png", 
+      heroImage: "assets/hero-display.png",
+      bannerImage: "assets/banner.png",
+//核心設定中心, SEO
+      seo: {
+        title: "TWSCREEN | Display Solutions for Global Partners",
+        description: "TWSCREEN provides TFT LCD panels, touch displays, AD boards, and display kits for industrial, medical, transportation, and custom device projects.",
+        keywords: "TFT LCD, touch display, AD board, display kit, industrial display, medical display, LCD supplier, TWSCREEN",
+        canonical: "https://example.com/",
+        ogImage: "assets/hero-display.png"
+      },
+//核心設定中心, 頁面文字內容
+      content: {
+        navProfile: "Profile",
+        navProducts: "Products",
+        navApplications: "Applications",
+        navSolutions: "Solutions",
+        navInquiry: "Inquiry",
+        heroEyebrow: "Touch • TFT LCD • AD Board • Display Kits",
+        heroTitle: "Stable, reliable display solutions that are easier to evaluate and faster to deploy.",
+        heroLead: "TWScreen provides multi-brand TFT LCD panels and complete display integration for industrial, medical, transportation, outdoor, and custom device projects.",
+        ctaPrimary: "Request a Quote (Inquiry)",
+        ctaSecondary: "Product Line",
+        stat1Title: "5.7\" - 32\"",
+        stat1Text: "Multi-brand TFT LCD options for new development and long-life projects.",
+        stat2Title: "Touch + Board",
+        stat2Text: "PCAP, resistive touch, and AD board kits prepared for faster evaluation.",
+        stat3Title: "One Window",
+        stat3Text: "Panels, accessories, matching guidance, and alternatives from one team.",
+        heroDetail1: "Fast and complete TFT LCD kit solutions with panel, touch, board, and cable support.",
+        heroDetail2: "Coverage across AUO, Innolux, LG, BOE, and other mainstream brands.",
+        heroDetail3: "Support for USB-C, HDMI, VGA, DVI, DisplayPort, and project-specific interfaces.",
+        heroDetail4: "Built to reduce sourcing friction and compatibility uncertainty during integration.",
+        heroBadgeTitle: "Fast and complete TFT LCD kit support",
+        heroBadgeText: "We help customers shortlist the right models, avoid compatibility issues, and move from sample to production with less friction.",
+        whyTitle: "Why teams choose TWSCREEN",
+        whyLead: "The page should answer three questions fast: what you supply, where it fits, and how you reduce project risk.",
+        whyCard1Title: "Multi-brand sourcing with practical model guidance",
+        whyCard1Text: "We compare mainstream panels by size, interface, brightness, lifecycle, and availability so your team can shortlist faster.",
+        whyCard2Title: "Integrated touch and display kit support",
+        whyCard2Text: "Beyond panels, we combine touch, optical bonding, AD boards, and accessories into solutions that are easier to validate.",
+        whyCard3Title: "Supply continuity for real product programs",
+        whyCard3Text: "When shortage, change, or EOL risk appears, we help present alternatives clearly so internal approval moves faster.",
+        productsTitle: "Products",
+        productsLead: "Clear product groups make the catalog easier to scan. Each card works as a direct entry point for recommendation, sampling, or future product links.",
+        productsCta: "Get a recommendation",
+        product1Title: "Touch Display",
+        product1Text: "PCAP and resistive touch solutions integrated with TFT LCD panels for embedded and industrial use.",
+        product1Meta: "Best for HMI and interactive devices",
+        product2Title: "AD Board",
+        product2Text: "Driver boards supporting HDMI, VGA, DVI, DisplayPort and USB-C, depending on the model and project setup.",
+        product2Meta: "Bring-up faster with matching support",
+        product3Title: "Display Kits",
+        product3Text: "Complete kits including LCD, AD board, cables, and accessories for evaluation, demos, and rapid prototyping.",
+        product3Meta: "Ideal for sample stage and quick testing",
+        product4Title: "TFT LCD Panels",
+        product4Text: "6.5\"-32\" panels from AUO, LG, INNOLUX, BOE and more, with industrial lifecycle focus and alternative suggestions.",
+        product4Meta: "For long-life and spec-driven projects",
+        applicationsTitle: "Applications",
+        applicationsLead: "Visual scenarios make the page feel more concrete and trustworthy. This section now appears earlier so visitors understand where your solutions are used before reading process details.",
+        applicationsCta: "Tell us your use case",
+        appLabel1: "Industrial Automation",
+        appLabel2: "Medical / HMI",
+        appLabel3: "Transportation / Outdoor",
+        appEyebrow: "Project Fit",
+        appPanelTitle: "Built for products that need reliability, visibility, and supply flexibility.",
+        appPanelLead: "Replace these visuals with partner case images later, but even now the section works as a quick explanation of where your display solutions are used.",
+        appStory1Title: "Industrial systems",
+        appStory1Text: "Panels and touch combinations for machinery UI, factory terminals, and equipment control.",
+        appStory2Title: "Medical interfaces",
+        appStory2Text: "Clear viewing, touch responsiveness, and practical integration support for device displays.",
+        appStory3Title: "Transportation and outdoor use",
+        appStory3Text: "Brightness, bonding, and environmental considerations for more demanding field conditions.",
+        solutionsTitle: "Solutions",
+        solutionsLead: "After visitors understand the product scope and application fit, this section explains how you reduce selection risk, integration time, and supply uncertainty.",
+        solution1Title: "Model Selection (BOM / Alternatives)",
+        solution1Text: "Based on size, brightness, interface, temperature range, and availability risk, we propose recommended models and compatible alternatives.",
+        solution2Title: "Touch + Optical Bonding Integration",
+        solution2Text: "OCA/LOCA bonding, custom cover glass, and mechanical integration for improved readability, fewer reflections, and better reliability.",
+        solution3Title: "Prototype to Production Delivery",
+        solution3Text: "Fast sampling, transparent lead time, and shipping support aligned with your test standards, packaging needs, and delivery requirements.",
+        ctaBandTitle: "Tell us the size, interface, brightness, and use case.",
+        ctaBandText: "Start with requirements, not part numbers. We can recommend suitable models and alternatives more quickly when the target conditions are clear.",
+        ctaBandButton: "Start Your Inquiry",
+        inquiryTitle: "Send an Inquiry",
+        inquiryLead: "Please fill in the form below. We will reply by email.<br />Start with requirements, not part numbers.<br />Share size, resolution, brightness, interface, temperature range, and use case - we'll recommend suitable models and alternatives.",
+        inquiryAsideTitle: "What you'll get",
+        inquiryAsideLead: "Typically within <b>1-2 business days</b>:",
+        inquiryKpi1: "Model recommendation",
+        inquiryKpi2: "Alternative options",
+        inquiryKpi3: "Lead time guidance",
+        inquiryKpi4: "Quick response",
+        inquiryContactLabel: "Prefer email? You can also contact:",
+        contactPhoneText: "Phone: +886-0-0000-0000",
+        contactAddressText: "Region: Taiwan",
+        inquiryContactNote: "(You can customize this per partner site.)",
+        inquirySubmitHint: "No account needed. We'll reply by email.",
+        inquiryTip: "Tip: If you already have a panel model number, include it in the message.",
+        footerText: "TWSCREEN. All rights reserved."
+      }
+    };
+  </script>
+<!-- 網站CSS樣式 -->
+  <style>
+    :root{
+      --bg:#08111f; /* 背景色 */
+      --text:#edf3ff; /* 主文字色 */
+      --muted:#aebbd9; /* 次文字色 */
+      --line:rgba(255,255,255,.12);
+      --accent:#63d8ff; /* 主漸層色 */
+      --accent2:#8dffb9;
+      --accent-dark:#07121d;
+      --shadow:0 22px 70px rgba(0,0,0,.34);
+      --radius:22px; /* 圓角 */
+      --max:1140px; /* 最大內容寬 */
+      --topbar-height:72px; /* 導覽列高度 */
+    }
+/* 穩定排版基礎設定 */
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 10% -10%, rgba(99,216,255,.22), transparent 60%),
+        radial-gradient(760px 520px at 100% 6%, rgba(141,255,185,.12), transparent 60%),
+        linear-gradient(180deg, #07101d 0%, #091427 100%);
+      font-family:"Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      scroll-behavior:smooth;
+    }
+    body{overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,input,textarea{font:inherit}
+    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto;}
+    .section{padding:84px 0;}
+    .muted{color:var(--muted); line-height:1.65;}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:9px 14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 6px rgba(99,216,255,.12);
+    }
+    h1,h2,h3,p{margin:0}
+    h1{
+      font-size:clamp(38px, 5vw, 64px);
+      line-height:1.02;
+      letter-spacing:-.04em;
+    }
+    h2{
+      font-size:clamp(28px, 3vw, 40px);
+      line-height:1.08;
+      letter-spacing:-.03em;
+      margin-bottom:12px;
+    }
+    h3{font-size:20px; line-height:1.2;}
+    .divider{border-top:1px solid var(--line);}
+/* 元件樣式區塊模組化 */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      height:var(--topbar-height);
+      border-bottom:1px solid rgba(255,255,255,.09);
+      backdrop-filter:blur(16px);
+      background:rgba(8,17,31,.72);
+    }
+    .nav{
+      height:var(--topbar-height);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:220px;
+      font-weight:800;
+      letter-spacing:.01em;
+    }
+    .brand img{width:auto;height:38px}
+    .brand span{font-size:14px; line-height:1.3;}
+    .menu{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .menu a{
+      padding:9px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:14px;
+      transition:.22s ease;
+    }
+    .menu a:hover{
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+    }
+    .menu a.active{
+      color:var(--text);
+      background:rgba(99,216,255,.12);
+      border:1px solid rgba(99,216,255,.18);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:13px 18px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      cursor:pointer;
+      transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:var(--accent-dark);
+      box-shadow:0 14px 30px rgba(0,0,0,.32);
+    }
+    .btn.ghost{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.04);
+    }
+
+    .heroWrap{padding:34px 0 16px}
+    .hero{
+      display:grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+      gap:22px;
+      align-items:stretch;
+    }
+    .heroCard,
+    .heroMedia,
+    .spotlight,
+    .card,
+    .storyPanel,
+    .ctaBand,
+    .formWrap{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .heroCard{
+      position:relative;
+      overflow:hidden;
+      padding:30px;
+      background:
+        radial-gradient(640px 260px at 18% 0%, rgba(99,216,255,.18), transparent 64%),
+        radial-gradient(560px 260px at 92% 14%, rgba(141,255,185,.12), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+    }
+    .heroContent{position:relative; z-index:1}
+    .heroLead{
+      max-width:620px;
+      margin:16px 0 0;
+      font-size:18px;
+      line-height:1.75;
+      color:var(--muted);
+    }
+    .heroActions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+    .heroStats{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:12px;
+      margin-top:26px;
+    }
+    .stat{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(255,255,255,.04);
+    }
+    .stat strong{
+      display:block;
+      font-size:24px;
+      line-height:1;
+      margin-bottom:8px;
+    }
+    .stat span{
+      display:block;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.55;
+    }
+    .heroDetails{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:10px;
+      margin-top:20px;
+    }
+    .pill{
+      padding:11px 13px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+    .heroMedia{
+      position:relative;
+      overflow:hidden;
+      min-height:540px;
+      background:rgba(255,255,255,.03);
+    }
+    .heroMedia img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .mediaBadge{
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:18px;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(7,16,29,.74);
+      backdrop-filter:blur(12px);
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+    }
+    .mediaBadge b{
+      display:block;
+      color:var(--text);
+      font-size:15px;
+      margin-bottom:4px;
+    }
+    .sectionHead{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      margin-bottom:24px;
+    }
+    .sectionLead{max-width:720px}
+
+    .spotlightGrid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:16px;
+    }
+    .spotlight{
+      padding:22px;
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+    }
+    .spotlightLabel{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(135deg, rgba(99,216,255,.2), rgba(141,255,185,.16));
+      font-weight:800;
+      margin-bottom:18px;
+    }
+    .spotlight p{margin-top:10px}
+
+    .grid4{display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:16px;}
+    .grid3{display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:16px;}
+    .card{
+      overflow:hidden;
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.025));
+      transition:transform .22s ease, border-color .22s ease, background .22s ease;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(99,216,255,.22);
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+    }
+    .cardMedia{
+      height:176px;
+      overflow:hidden;
+      border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+    }
+    .cardMedia img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .cardBody{padding:18px}
+    .mini{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.7;
+    }
+    .meta{
+      display:inline-flex;
+      margin-top:14px;
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:var(--text);
+      font-size:12px;
+    }
+    .iconMark{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:46px;
+      height:46px;
+      border-radius:15px;
+      background:linear-gradient(135deg, rgba(99,216,255,.22), rgba(141,255,185,.18));
+      border:1px solid rgba(255,255,255,.12);
+      font-weight:900;
+      margin-bottom:16px;
+    }
+
+    .storyGrid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    .gallery{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      min-height:100%;
+    }
+    .galleryLeft,
+    .gItem{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.03);
+    }
+    .galleryLeft{min-height:420px}
+    .galleryLeft img,
+    .gItem img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .galleryRight{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+    .gItem{min-height:202px}
+    .gLabel{
+      position:absolute;
+      left:14px;
+      bottom:14px;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(7,16,29,.7);
+      backdrop-filter:blur(10px);
+      font-size:13px;
+    }
+    .storyPanel{
+      padding:24px;
+      background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+    }
+    .storyList{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+    .storyItem{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.09);
+      background:rgba(255,255,255,.03);
+    }
+    .storyItem strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:15px;
+    }
+
+    .ctaBand{
+      padding:28px;
+      background:
+        radial-gradient(560px 220px at 10% 0%, rgba(99,216,255,.2), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+    }
+    .ctaBandInner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .ctaBandCopy{max-width:700px}
+    .ctaBandCopy p{margin-top:10px}
+
+    .formWrap{
+      overflow:hidden;
+      background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.02));
+    }
+    .formGrid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+    }
+    .formAside{
+      padding:26px;
+      border-right:1px solid var(--line);
+      background:rgba(255,255,255,.025);
+    }
+    .formMain{padding:26px}
+    .kpi{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:18px;
+    }
+    form{
+      display:grid;
+      gap:12px;
+      margin-top:8px;
+    }
+    .row2{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+    input,textarea{
+      width:100%;
+      padding:13px 14px;
+      color:var(--text);
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.035);
+      outline:none;
+      transition:border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    input:focus,textarea:focus{
+      border-color:rgba(99,216,255,.32);
+      background:rgba(255,255,255,.05);
+      box-shadow:0 0 0 4px rgba(99,216,255,.08);
+    }
+    input::placeholder,textarea::placeholder{color:rgba(174,187,217,.8)}
+    textarea{
+      min-height:140px;
+      resize:vertical;
+    }
+    .hint{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.7;
+    }
+    .formFooter{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:4px;
+    }
+    #form-response{
+      margin-top:12px;
+      font-weight:700;
+    }
+
+    .footer{
+      padding:30px 0 46px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+/* 響應式自動排版, Hero左右兩欄變一欄, Product四欄變兩欄在變一欄, 表單左右兩區變上下堆疊 */
+    @media(max-width:1080px){
+      .hero,
+      .storyGrid{
+        grid-template-columns:1fr;
+      }
+      .heroMedia{min-height:420px}
+      .grid4{grid-template-columns:repeat(2, minmax(0, 1fr));}
+      .spotlightGrid{grid-template-columns:1fr;}
+      .formGrid{grid-template-columns:1fr;}
+      .formAside{
+        border-right:none;
+        border-bottom:1px solid var(--line);
+      }
+    }
+    @media(max-width:760px){
+      .section{padding:68px 0}
+      .nav{align-items:flex-start; padding-top:14px; padding-bottom:14px; height:auto;}
+      .topbar{height:auto}
+      .brand{min-width:0}
+      .menu{justify-content:flex-start}
+      .heroCard,
+      .storyPanel,
+      .ctaBand,
+      .formAside,
+      .formMain{padding:22px}
+      .heroStats,
+      .heroDetails,
+      .grid3,
+      .grid4,
+      .row2,
+      .gallery,
+      .kpi{
+        grid-template-columns:1fr;
+      }
+      .galleryLeft,
+      .gItem,
+      .heroMedia{min-height:280px}
+    }
+  </style>
+</head>
+<body>
+  <!-- =========================
+    頂部導覽區
+    用途：顯示經銷商品牌 Logo、品牌標語、主選單，方便快速切換段落
+  ========================= -->
+<!-- 頂部導覽區 -->
+  <header class="topbar" id="top">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <!-- 建議尺寸：Logo 最佳原稿 320 x 96 px，透明背景 PNG / SVG -->
+        <img id="brandLogo" src="assets/logo.png" alt="Partner Logo" /> <!-- Logo -->
+        <span id="brandLine">Taiwan Screen - The Best TFT LCD Solution Provider</span> <!-- 頂部Logo旁邊的小標 -->
+      </a>
+<!-- 頂部導覽連結, 跳到同頁中對應的Section -->
+      <nav class="menu" aria-label="Primary">
+        <a href="#hero" class="scroll-link" id="navProfile">Profile</a>
+        <a href="#products" class="scroll-link" id="navProducts">Products</a>
+        <a href="#applications" class="scroll-link" id="navApplications">Applications</a>
+        <a href="#solutions" class="scroll-link" id="navSolutions">Solutions</a>
+        <a href="#inquiry" class="scroll-link" id="navInquiry">Inquiry</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================
+    首屏主視覺區
+    用途：快速說明品牌提供的方案、主要 CTA、關鍵賣點與主圖
+  ========================= -->
+<!-- 網頁最上方顯示區塊 -->
+  <section class="heroWrap">
+    <div class="container hero" id="hero">
+      <div class="heroCard">
+        <div class="heroContent">
+          <span class="eyebrow" id="heroEyebrow"><span class="dot"></span> Touch • TFT LCD • AD Board • Display Kits</span> <!-- 上方小標籤 -->
+          <h1 id="heroTitle">Stable, reliable display solutions that are easier to evaluate and faster to deploy.</h1> <!-- 主標題 -->
+          <p class="heroLead" id="heroLead"> <!-- 主說明 -->
+            TWScreen provides multi-brand TFT LCD panels and complete display integration for industrial,
+            medical, transportation, outdoor, and custom device projects.
+          </p>
+
+          <div class="heroActions">
+            <a class="btn primary scroll-link" href="#inquiry" id="ctaPrimary">Request a Quote (Inquiry)</a> <!-- 左邊按鈕 -->
+            <a class="btn ghost scroll-link" href="#products" id="ctaSecondary">Product Line</a> <!-- 右邊按鈕 -->
+          </div>
+<!-- 三個重點數值 -->
+          <div class="heroStats">
+            <div class="stat">
+              <strong id="stat1Title">5.7" - 32"</strong>
+              <span id="stat1Text">Multi-brand TFT LCD options for new development and long-life projects.</span>
+            </div>
+            <div class="stat">
+              <strong id="stat2Title">Touch + Board</strong>
+              <span id="stat2Text">PCAP, resistive touch, and AD board kits prepared for faster evaluation.</span>
+            </div>
+            <div class="stat">
+              <strong id="stat3Title">One Window</strong>
+              <span id="stat3Text">Panels, accessories, matching guidance, and alternatives from one team.</span>
+            </div>
+          </div>
+<!-- 四個補充賣點 -->
+          <div class="heroDetails">
+            <div class="pill" id="heroDetail1">Fast and complete TFT LCD kit solutions with panel, touch, board, and cable support.</div>
+            <div class="pill" id="heroDetail2">Coverage across AUO, Innolux, LG, BOE, and other mainstream brands.</div>
+            <div class="pill" id="heroDetail3">Support for USB-C, HDMI, VGA, DVI, DisplayPort, and project-specific interfaces.</div>
+            <div class="pill" id="heroDetail4">Built to reduce sourcing friction and compatibility uncertainty during integration.</div>
+          </div>
+        </div>
+      </div>
+<!-- 網頁最上方右邊圖片 -->
+      <div class="heroMedia" aria-label="Hero image">
+        <!-- 建議尺寸：Hero 主圖最佳原稿 1600 x 1200 px -->
+        <img id="heroImage" src="assets/hero-display.png" alt="Display solution preview" />
+        <div class="mediaBadge">
+          <b id="heroBadgeTitle">Fast and complete TFT LCD kit support</b> <!-- 標題文字 -->
+          <span id="heroBadgeText">We help customers shortlist the right models, avoid compatibility issues, and move from sample to production with less friction.</span> <!-- 說明文字 -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+    品牌優勢區
+    用途：用 3 個重點快速說明為何選擇此經銷商 / 品牌
+  ========================= -->
+<!-- 品牌優勢why區 -->
+  <section class="container section" id="why">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2 id="whyTitle">Why teams choose TWSCREEN</h2> <!-- 區塊標題 -->
+        <p class="muted" id="whyLead">
+          The page should answer three questions fast: what you supply, where it fits, and how you reduce project risk. <!-- 引導王字 -->
+        </p>
+      </div>
+    </div>
+<!-- 三張spotlight卡片 -->
+    <div class="spotlightGrid">
+      <article class="spotlight">
+        <div class="spotlightLabel">01</div> <!-- 優勢一 -->
+        <h3 id="whyCard1Title">Multi-brand sourcing with practical model guidance</h3> <!-- 優勢一標題 -->
+        <p class="muted" id="whyCard1Text">
+          We compare mainstream panels by size, interface, brightness, lifecycle, and availability so your team can shortlist faster. <!-- 優勢一說明 -->
+        </p>
+      </article>
+
+      <article class="spotlight">
+        <div class="spotlightLabel">02</div> <!-- 優勢二 -->
+        <h3 id="whyCard2Title">Integrated touch and display kit support</h3> <!-- 優勢二標題 -->
+        <p class="muted" id="whyCard2Text">
+          Beyond panels, we combine touch, optical bonding, AD boards, and accessories into solutions that are easier to validate. <!-- 優勢二說明 -->
+        </p>
+      </article>
+
+      <article class="spotlight">
+        <div class="spotlightLabel">03</div> <!-- 優勢三 -->
+        <h3 id="whyCard3Title">Supply continuity for real product programs</h3> <!-- 優勢三標題 -->
+        <p class="muted" id="whyCard3Text">
+          When shortage, change, or EOL risk appears, we help present alternatives clearly so internal approval moves faster. <!-- 優勢三說明 -->
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- =========================
+    產品分類區
+    用途：列出主要產品線，方便經銷商依國家站需求替換產品文案與連結
+  ========================= -->
+<!-- 產品分類區 -->
+  <section id="products" class="container section">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2 id="productsTitle">Products</h2> <!-- 區塊標題 -->
+        <p class="muted" id="productsLead">
+          Clear product groups make the catalog easier to scan. Each card works as a direct entry point for recommendation, sampling, or future product links. <!-- 區塊說明 -->
+        </p>
+      </div>
+      <a class="btn ghost scroll-link" href="#inquiry" id="productsCta">Get a recommendation</a> <!-- 滑動到Inquiry -->
+    </div>
+ <!-- 四張卡片 -->
+    <div class="grid4">
+      <article class="card">
+        <div class="cardMedia">
+          <!-- 建議尺寸：產品卡圖片最佳原稿 800 x 560 px -->
+          <img src="assets/touch-display.png" alt="Touch Display" /> <!-- 產品一圖片 -->
+        </div>
+        <div class="cardBody">
+          <h3 id="product1Title">Touch Display</h3> <!-- 產品一標題 -->
+          <p class="mini" id="product1Text">PCAP and resistive touch solutions integrated with TFT LCD panels for embedded and industrial use.</p> <!-- 產品一說明 -->
+          <span class="meta" id="product1Meta">Best for HMI and interactive devices</span> <!-- 產品一註釋 -->
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardMedia">
+          <!-- 建議尺寸：產品卡圖片最佳原稿 800 x 560 px -->
+          <img src="assets/ad-board.png" alt="AD Board" /> <!-- 產品二圖片 -->
+        </div>
+        <div class="cardBody">
+          <h3 id="product2Title">AD Board</h3> <!-- 產品二標題 -->
+          <p class="mini" id="product2Text">Driver boards supporting HDMI, VGA, DVI, DisplayPort and USB-C, depending on the model and project setup.</p> <!-- 產品二說明 -->
+          <span class="meta" id="product2Meta">Bring-up faster with matching support</span> <!-- 產品二註釋 -->
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardMedia">
+          <!-- 建議尺寸：產品卡圖片最佳原稿 800 x 560 px -->
+          <img src="assets/display-kits.png" alt="Display Kits" /> <!-- 產品三圖片 -->
+        </div>
+        <div class="cardBody">
+          <h3 id="product3Title">Display Kits</h3> <!-- 產品三標題 -->
+          <p class="mini" id="product3Text">Complete kits including LCD, AD board, cables, and accessories for evaluation, demos, and rapid prototyping.</p> <!-- 產品三說明 -->
+          <span class="meta" id="product3Meta">Ideal for sample stage and quick testing</span> <!-- 產品三註釋 -->
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardMedia">
+          <!-- 建議尺寸：產品卡圖片最佳原稿 800 x 560 px -->
+          <img src="assets/tft-lcd.png" alt="TFT LCD" /> <!-- 產品四圖片 -->
+        </div>
+        <div class="cardBody">
+          <h3 id="product4Title">TFT LCD Panels</h3> <!-- 產品四標題 -->
+          <p class="mini" id="product4Text">6.5"-32" panels from AUO, LG, INNOLUX, BOE and more, with industrial lifecycle focus and alternative suggestions.</p> <!-- 產品四說明 -->
+          <span class="meta" id="product4Meta">For long-life and spec-driven projects</span> <!-- 產品四註釋 -->
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- =========================
+    應用情境區
+    用途：用實際應用場景提升信任感，也方便不同國家站替換在地案例圖片
+  ========================= -->
+<!-- 應用情境區 -->
+  <section id="applications" class="container section">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2 id="applicationsTitle">Applications</h2> <!-- 區塊標題 -->
+        <p class="muted" id="applicationsLead">
+          Visual scenarios make the page feel more concrete and trustworthy. This section now appears earlier so visitors understand where your solutions are used before reading process details. <!-- 區塊說明 -->
+        </p>
+      </div>
+      <a class="btn ghost scroll-link" href="#inquiry" id="applicationsCta">Tell us your use case</a> <!-- 滑動到Inquiry -->
+    </div>
+<!-- 一張大圖兩張小圖 -->
+    <div class="storyGrid">
+      <div class="gallery">
+        <div class="galleryLeft">
+          <!-- 建議尺寸：應用大圖最佳原稿 1400 x 1000 px -->
+          <img src="assets/app-industrial.png" alt="Industrial application" /> <!-- 大圖圖片 -->
+          <div class="gLabel" id="appLabel1">Industrial Automation</div> <!-- 大圖註釋 -->
+        </div>
+
+        <div class="galleryRight">
+          <div class="gItem">
+            <!-- 建議尺寸：應用小圖最佳原稿 900 x 640 px -->
+            <img src="assets/app-medical.png" alt="Medical application" /> <!-- 小圖一圖片 -->
+            <div class="gLabel" id="appLabel2">Medical / HMI</div> <!-- 小圖一註釋 -->
+          </div>
+          <div class="gItem">
+            <!-- 建議尺寸：應用小圖最佳原稿 900 x 640 px -->
+            <img src="assets/app-transport.png" alt="Transportation application" /> <!-- 小圖二圖片 -->
+            <div class="gLabel" id="appLabel3">Transportation / Outdoor</div> <!-- 小圖二註釋 -->
+          </div>
+        </div>
+      </div>
+<!-- 右邊應用說明區塊 -->
+      <aside class="storyPanel">
+        <span class="eyebrow" id="appEyebrow"><span class="dot"></span> Project Fit</span> <!-- 上方標籤 -->
+        <h3 id="appPanelTitle" style="margin-top:16px;">Built for products that need reliability, visibility, and supply flexibility.</h3> <!-- 說明標題 -->
+        <p class="muted" id="appPanelLead" style="margin-top:12px;">
+          Replace these visuals with partner case images later, but even now the section works as a quick explanation of where your display solutions are used. <!-- 說明說明 -->
+        </p>
+<!-- 三個StoryItem -->
+        <div class="storyList">
+          <div class="storyItem">
+            <strong id="appStory1Title">Industrial systems</strong> <!-- 圖片一說明標題 -->
+            <span class="muted" id="appStory1Text">Panels and touch combinations for machinery UI, factory terminals, and equipment control.</span> <!-- 圖片一說明說明 -->
+          </div>
+          <div class="storyItem">
+            <strong id="appStory2Title">Medical interfaces</strong> <!-- 圖片二說明標題 -->
+            <span class="muted" id="appStory2Text">Clear viewing, touch responsiveness, and practical integration support for device displays.</span> <!-- 圖片二說明說明 -->
+          </div>
+          <div class="storyItem">
+            <strong id="appStory3Title">Transportation and outdoor use</strong> <!-- 圖片三說明標題 -->
+            <span class="muted" id="appStory3Text">Brightness, bonding, and environmental considerations for more demanding field conditions.</span> <!-- 圖片三說明說明 -->
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- =========================
+    橫幅圖片區
+    用途：可換成各國經銷商主打活動、品牌形象或代理區域宣傳圖
+  ========================= -->
+<!-- 橫幅圖片, 外變包一層圓角, 陰影, 邊框 -->  
+  <section id="banner" class="container" style="padding:0 0 12px;">
+    <div style="border:1px solid var(--line); border-radius:22px; overflow:hidden; background:rgba(255,255,255,.03); box-shadow:var(--shadow);">
+      <!-- 建議尺寸：Banner 最佳原稿 1600 x 700 px -->
+      <img id="bannerImage" src="assets/banner.png" alt="Banner Image" style="width:100%; max-height:420px; object-fit:cover;" /> <!-- 橫幅圖片 -->
+    </div>
+  </section>
+
+  <!-- =========================
+    解決方案區
+    用途：說明此站點提供的服務流程與技術支援，強化 SEO 與商務說服力
+  ========================= -->
+<!-- 解決方案區 -->
+  <section id="solutions" class="container section">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2 id="solutionsTitle">Solutions</h2> <!-- 解決方案標題 -->
+        <p class="muted" id="solutionsLead">
+          After visitors understand the product scope and application fit, this section explains how you reduce selection risk, integration time, and supply uncertainty. <!-- 解決方案說明 -->
+        </p>
+      </div>
+    </div>
+<!-- 三張解決方案卡片 -->
+    <div class="grid3">
+      <article class="card">
+        <div class="cardBody">
+          <div class="iconMark">BOM</div> <!-- 解決方案一小標 -->
+          <h3 id="solution1Title">Model Selection (BOM / Alternatives)</h3> <!-- 解決方案一標題 -->
+          <p class="mini" id="solution1Text">
+            Based on size, brightness, interface, temperature range, and availability risk, we propose recommended models and compatible alternatives. <!-- 解決方案一說明 -->
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardBody">
+          <div class="iconMark">OCA</div> <!-- 解決方案二小標 -->
+          <h3 id="solution2Title">Touch + Optical Bonding Integration</h3> <!-- 解決方案二說標題 -->
+          <p class="mini" id="solution2Text">
+            OCA/LOCA bonding, custom cover glass, and mechanical integration for improved readability, fewer reflections, and better reliability. <!-- 解決方案二說明 -->
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardBody">
+          <div class="iconMark">LD</div> <!-- 解決方案三小標 -->
+          <h3 id="solution3Title">Prototype to Production Delivery</h3> <!-- 解決方案三標題 -->
+          <p class="mini" id="solution3Text">
+            Fast sampling, transparent lead time, and shipping support aligned with your test standards, packaging needs, and delivery requirements. <!-- 解決方案三小標 -->
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- =========================
+    中段行動呼籲區
+    用途：在訪客滑到中段時再次引導詢價，提高轉換率
+  ========================= -->
+<!-- CTA Inquiry區塊 -->
+  <section class="container section" style="padding-top:0;">
+    <div class="ctaBand">
+      <div class="ctaBandInner">
+        <div class="ctaBandCopy">
+          <h2 id="ctaBandTitle" style="margin:0;">Tell us the size, interface, brightness, and use case.</h2> <!-- CTA標題 -->
+          <p class="muted" id="ctaBandText">
+            Start with requirements, not part numbers. We can recommend suitable models and alternatives more quickly when the target conditions are clear. <!-- CTA說明 -->
+          </p>
+        </div>
+        <a class="btn primary scroll-link" href="#inquiry" id="ctaBandButton">Start Your Inquiry</a> <!-- CTA按鍵 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+    詢價表單區
+    用途：收集客戶需求。請保留 Formspree action 與 hidden 欄位名稱以維持串接
+  ========================= -->
+<!-- Inquiry區,串接Formspree -->
+<!-- Inquiry左側標題 -->
+  <section id="inquiry" class="container section" style="padding-top:0;">
+    <div class="sectionHead">
+      <div class="sectionLead">
+        <h2 id="inquiryTitle">Send an Inquiry</h2> <!-- Inquiry左側標題標題 -->
+        <p class="muted" id="inquiryLead">
+          Please fill in the form below. We will reply by email.<br />
+          Start with requirements, not part numbers.<br />
+          Share size, resolution, brightness, interface, temperature range, and use case - we'll recommend suitable models and alternatives. <!-- Inquiry左側標題說明 -->
+        </p>
+      </div>
+    </div>
+<!-- Inquiry左側介紹 -->
+    <div class="formWrap">
+      <div class="formGrid">
+        <aside class="formAside">
+          <h3 id="inquiryAsideTitle" style="margin-top:0;">What you'll get</h3> <!-- Inquiry左側介紹標題 -->
+          <p class="muted" id="inquiryAsideLead" style="margin-top:10px;">
+            Typically within <b>1-2 business days</b>: <!-- Inquiry左側介紹說明 -->
+          </p>
+          <div class="kpi">
+            <div class="pill" id="inquiryKpi1">Model recommendation</div> <!-- Inquiry左側介紹特點一 -->
+            <div class="pill" id="inquiryKpi2">Alternative options</div> <!-- Inquiry左側介紹特點二 -->
+            <div class="pill" id="inquiryKpi3">Lead time guidance</div> <!-- Inquiry左側介紹特點三 -->
+            <div class="pill" id="inquiryKpi4">Quick response</div> <!-- Inquiry左側介紹特點四 -->
+          </div>
+<!-- Inquiry左側其他聯繫方式 -->
+          <div class="divider" style="margin-top:20px;"></div>
+          <p class="hint">
+            <span id="inquiryContactLabel">Prefer email? You can also contact:</span> <b id="salesEmail">sales@twscreen.com</b><br /> <!-- Inquiry左側其他聯繫email -->
+            <span id="contactPhoneText">Phone: +886-0-0000-0000</span><br /> <!-- Inquiry左側其他聯繫電話 -->
+            <span id="contactAddressText">Region: Taiwan</span><br /> <!-- Inquiry左側其他聯繫國家 -->
+            <span id="inquiryContactNote">(You can customize this per partner site.)</span> <!-- Inquiry左側其他聯繫說明 -->
+          </p>
+        </aside>
+<!-- Inquiry右側表單區 -->
+        <div class="formMain">
+          <form id="inquiry-form" action="https://formspree.io/f/mnjdkbzn" method="POST"> <!-- 表單會送到這裡 -->
+            <div class="row2">
+              <input type="text" name="name" placeholder="Your Name *" required /> <!-- 必填姓名 -->
+              <input type="text" name="company" placeholder="Company Name" /> <!-- 公司名稱 -->
+            </div>
+
+            <input type="telephone" name="telephone" placeholder="telephone" /> <!-- 聯繫電話 -->
+            <input type="email" name="email" placeholder="Email *" required /> <!-- 必填Email -->
+
+            <textarea name="message" placeholder="Your Inquiry *" required></textarea> <!-- 必填詢問內容 -->
+ <!-- 辨識夥伴區 -->
+            <input type="hidden" id="partner_country" name="partner_country" value="Taiwan" /> <!-- 夥伴國家 -->
+            <input type="hidden" id="partner_company" name="partner_company" value="Taiwan Screen Optronic" /> <!-- 夥伴公司名 -->
+            <input type="hidden" id="_subject" name="_subject" value="" /> <!-- 信件主旨 -->
+            <input type="hidden" name="_cc" value="ray@twscreen.com,gina@twscreen.com" /> <!-- Inquiry CC給誰 -->
+<!-- Inquiry右側表單區底部 -->
+            <div class="formFooter">
+              <button type="submit" class="btn primary">Send Inquiry</button> <!-- Inquiry右側表單區底部送出 -->
+              <span class="muted" id="inquirySubmitHint" style="font-size:13px;">No account needed. We'll reply by email.</span> <!-- Inquiry右側表單區底部說明 -->
+            </div>
+          </form>
+
+          <div id="form-response"></div>
+
+          <p class="hint" id="inquiryTip">
+            Tip: If you already have a panel model number, include it in the message. <!-- Inquiry右側表單區底部註釋 -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+    頁尾區
+    用途：顯示版權資訊，可依國家站需求加上公司名稱或法律資訊
+  ========================= -->
+<!-- 頁尾區 -->
+  <footer class="footer">
+    &copy; <span id="year"></span> <span id="footerText">TWSCREEN. All rights reserved.</span> <!-- 自動更新年份版權 -->
+  </footer>
+
+  <!-- =========================
+    前端設定套用與互動腳本
+    用途：套用多國設定、SEO、語言內容、表單送出與選單高亮
+  ========================= -->
+<!-- 前端設定套用與互動腳本 -->
+  <script>
+/* 自動更新頁尾年份 */
+    document.getElementById("year").textContent = new Date().getFullYear();
+/* 自動把SITE_CONFIG裡的資料套用到頁面上 */
+    (function applySiteConfig(){
+      if(!window.SITE_CONFIG) return;
+
+      const config = window.SITE_CONFIG;
+      const logo = document.getElementById("brandLogo"); /* 換Logo */
+      const hero = document.getElementById("heroImage"); /* 換圖片 */
+      const banner = document.getElementById("bannerImage"); /* 換Banner */
+      const salesEmail = document.getElementById("salesEmail");
+      const contactPhoneText = document.getElementById("contactPhoneText");
+      const contactAddressText = document.getElementById("contactAddressText");
+      const brandLine = document.getElementById("brandLine");
+
+      document.documentElement.lang = config.htmlLang || config.locale || "en";
+
+      if (config.partnerLogo) logo.src = config.partnerLogo;
+      if (config.heroImage) hero.src = config.heroImage;
+      if (config.bannerImage) banner.src = config.bannerImage;
+      if (config.contactEmail) salesEmail.textContent = config.contactEmail;
+      if (config.contactPhone && contactPhoneText) contactPhoneText.textContent = "Phone: " + config.contactPhone;
+      if (config.contactAddress && contactAddressText) contactAddressText.textContent = "Region: " + config.contactAddress;
+      if (config.brandLine && brandLine) brandLine.textContent = config.brandLine;
+
+      if (config.seo) {
+        document.title = config.seo.title || document.title;
+        const metaDescription = document.getElementById("metaDescription");
+        const metaKeywords = document.getElementById("metaKeywords");
+        const ogTitle = document.getElementById("ogTitle");
+        const ogDescription = document.getElementById("ogDescription");
+        const ogImage = document.getElementById("ogImage");
+        const ogLocale = document.getElementById("ogLocale");
+        const twitterTitle = document.getElementById("twitterTitle");
+        const twitterDescription = document.getElementById("twitterDescription");
+        const twitterImage = document.getElementById("twitterImage");
+        const canonicalLink = document.getElementById("canonicalLink");
+        const structuredData = document.getElementById("structuredData");
+
+        if (metaDescription && config.seo.description) metaDescription.content = config.seo.description;
+        if (metaKeywords && config.seo.keywords) metaKeywords.content = config.seo.keywords;
+        if (ogTitle && config.seo.title) ogTitle.content = config.seo.title;
+        if (ogDescription && config.seo.description) ogDescription.content = config.seo.description;
+        if (ogImage && config.seo.ogImage) ogImage.content = config.seo.ogImage;
+        if (ogLocale && config.ogLocale) ogLocale.content = config.ogLocale;
+        if (twitterTitle && config.seo.title) twitterTitle.content = config.seo.title;
+        if (twitterDescription && config.seo.description) twitterDescription.content = config.seo.description;
+        if (twitterImage && config.seo.ogImage) twitterImage.content = config.seo.ogImage;
+        if (canonicalLink && config.seo.canonical) canonicalLink.href = config.seo.canonical;
+        if (structuredData) {
+          structuredData.textContent = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": config.partnerCompany || config.siteName || "TWSCREEN",
+            "url": config.seo.canonical || "https://example.com/",
+            "logo": config.partnerLogo || "",
+            "email": config.contactEmail || "",
+            "address": config.contactAddress || "",
+            "areaServed": config.country || ""
+          });
+        }
+      }
+
+      if (config.content) {
+        const setText = function(id, value){
+          const el = document.getElementById(id);
+          if (el && typeof value === "string") el.textContent = value;
+        };
+        const setHtml = function(id, value){
+          const el = document.getElementById(id);
+          if (el && typeof value === "string") el.innerHTML = value;
+        };
+
+        setText("navProfile", config.content.navProfile);
+        setText("navProducts", config.content.navProducts);
+        setText("navApplications", config.content.navApplications);
+        setText("navSolutions", config.content.navSolutions);
+        setText("navInquiry", config.content.navInquiry);
+        setText("heroEyebrow", config.content.heroEyebrow);
+        setText("heroTitle", config.content.heroTitle);
+        setText("heroLead", config.content.heroLead);
+        setText("ctaPrimary", config.content.ctaPrimary);
+        setText("ctaSecondary", config.content.ctaSecondary);
+        setText("stat1Title", config.content.stat1Title);
+        setText("stat1Text", config.content.stat1Text);
+        setText("stat2Title", config.content.stat2Title);
+        setText("stat2Text", config.content.stat2Text);
+        setText("stat3Title", config.content.stat3Title);
+        setText("stat3Text", config.content.stat3Text);
+        setText("heroDetail1", config.content.heroDetail1);
+        setText("heroDetail2", config.content.heroDetail2);
+        setText("heroDetail3", config.content.heroDetail3);
+        setText("heroDetail4", config.content.heroDetail4);
+        setText("heroBadgeTitle", config.content.heroBadgeTitle);
+        setText("heroBadgeText", config.content.heroBadgeText);
+        setText("whyTitle", config.content.whyTitle);
+        setText("whyLead", config.content.whyLead);
+        setText("whyCard1Title", config.content.whyCard1Title);
+        setText("whyCard1Text", config.content.whyCard1Text);
+        setText("whyCard2Title", config.content.whyCard2Title);
+        setText("whyCard2Text", config.content.whyCard2Text);
+        setText("whyCard3Title", config.content.whyCard3Title);
+        setText("whyCard3Text", config.content.whyCard3Text);
+        setText("productsTitle", config.content.productsTitle);
+        setText("productsLead", config.content.productsLead);
+        setText("productsCta", config.content.productsCta);
+        setText("product1Title", config.content.product1Title);
+        setText("product1Text", config.content.product1Text);
+        setText("product1Meta", config.content.product1Meta);
+        setText("product2Title", config.content.product2Title);
+        setText("product2Text", config.content.product2Text);
+        setText("product2Meta", config.content.product2Meta);
+        setText("product3Title", config.content.product3Title);
+        setText("product3Text", config.content.product3Text);
+        setText("product3Meta", config.content.product3Meta);
+        setText("product4Title", config.content.product4Title);
+        setText("product4Text", config.content.product4Text);
+        setText("product4Meta", config.content.product4Meta);
+        setText("applicationsTitle", config.content.applicationsTitle);
+        setText("applicationsLead", config.content.applicationsLead);
+        setText("applicationsCta", config.content.applicationsCta);
+        setText("appLabel1", config.content.appLabel1);
+        setText("appLabel2", config.content.appLabel2);
+        setText("appLabel3", config.content.appLabel3);
+        setText("appEyebrow", config.content.appEyebrow);
+        setText("appPanelTitle", config.content.appPanelTitle);
+        setText("appPanelLead", config.content.appPanelLead);
+        setText("appStory1Title", config.content.appStory1Title);
+        setText("appStory1Text", config.content.appStory1Text);
+        setText("appStory2Title", config.content.appStory2Title);
+        setText("appStory2Text", config.content.appStory2Text);
+        setText("appStory3Title", config.content.appStory3Title);
+        setText("appStory3Text", config.content.appStory3Text);
+        setText("solutionsTitle", config.content.solutionsTitle);
+        setText("solutionsLead", config.content.solutionsLead);
+        setText("solution1Title", config.content.solution1Title);
+        setText("solution1Text", config.content.solution1Text);
+        setText("solution2Title", config.content.solution2Title);
+        setText("solution2Text", config.content.solution2Text);
+        setText("solution3Title", config.content.solution3Title);
+        setText("solution3Text", config.content.solution3Text);
+        setText("ctaBandTitle", config.content.ctaBandTitle);
+        setText("ctaBandText", config.content.ctaBandText);
+        setText("ctaBandButton", config.content.ctaBandButton);
+        setText("inquiryTitle", config.content.inquiryTitle);
+        setHtml("inquiryLead", config.content.inquiryLead);
+        setText("inquiryAsideTitle", config.content.inquiryAsideTitle);
+        setHtml("inquiryAsideLead", config.content.inquiryAsideLead);
+        setText("inquiryKpi1", config.content.inquiryKpi1);
+        setText("inquiryKpi2", config.content.inquiryKpi2);
+        setText("inquiryKpi3", config.content.inquiryKpi3);
+        setText("inquiryKpi4", config.content.inquiryKpi4);
+        setText("inquiryContactLabel", config.content.inquiryContactLabel);
+        setText("contactPhoneText", config.content.contactPhoneText || ("Phone: " + (config.contactPhone || "")));
+        setText("contactAddressText", config.content.contactAddressText || ("Region: " + (config.contactAddress || "")));
+        setText("inquiryContactNote", config.content.inquiryContactNote);
+        setText("inquirySubmitHint", config.content.inquirySubmitHint);
+        setText("inquiryTip", config.content.inquiryTip);
+        setText("footerText", config.content.footerText);
+      }
+
+      const pc = document.getElementById("partner_country");
+      const pco = document.getElementById("partner_company");
+      if (pc && config.country) pc.value = config.country;
+      if (pco && config.partnerCompany) pco.value = config.partnerCompany;
+    })();
+/* 平滑捲動區塊 */
+    document.querySelectorAll(".scroll-link").forEach(function(link){
+      link.addEventListener("click", function(e){
+        const href = this.getAttribute("href");
+        if(!href || !href.startsWith("#")) return;
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetEl = document.getElementById(targetId);
+        if(!targetEl) return;
+
+        const rawOffset = getComputedStyle(document.documentElement).getPropertyValue("--topbar-height") || "72px";
+        const offset = parseInt(rawOffset, 10) || 72;
+        const topPos = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: topPos, behavior: "smooth" });
+      });
+    });
+/* Formspree AJAX表單送出 */
+    const form = document.getElementById("inquiry-form");
+    const responseDiv = document.getElementById("form-response");
+
+    form.addEventListener("submit", async function(e){
+      e.preventDefault();
+      responseDiv.style.color = "#b8c4e6";
+      responseDiv.textContent = "Sending...";
+
+      const nameValRaw = (form.querySelector('input[name="name"]')?.value || "").trim();
+      const nameVal = nameValRaw ? nameValRaw.replace(/\s+/g, " ") : "Inquiry";
+
+      const pad = function(n){ return String(n).padStart(2, "0"); };
+      const now = new Date();
+      const ts = now.getFullYear() + "-" +
+        pad(now.getMonth() + 1) + "-" +
+        pad(now.getDate()) + " " +
+        pad(now.getHours()) + ":" +
+        pad(now.getMinutes()) + ":" +
+        pad(now.getSeconds());
+
+      const subjEl = document.getElementById("_subject");
+      if (subjEl) subjEl.value = nameVal + " | " + ts + " (" + Date.now() + ")";
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { Accept: "application/json" }
+        });
+
+        if (res.ok) {
+          responseDiv.style.color = "#7cffb2";
+          responseDiv.textContent = "Your inquiry has been sent! We will reply by email.";
+          form.reset();
+
+          const pc = document.getElementById("partner_country");
+          const pco = document.getElementById("partner_company");
+          if (pc && window.SITE_CONFIG && window.SITE_CONFIG.country) pc.value = window.SITE_CONFIG.country;
+          if (pco && window.SITE_CONFIG && window.SITE_CONFIG.partnerCompany) pco.value = window.SITE_CONFIG.partnerCompany;
+
+          const subj = document.getElementById("_subject");
+          if (subj) subj.value = "";
+        } else {
+          let msg = "Please try again.";
+          try{
+            const data = await res.json();
+            msg = data.errors ? data.errors.map(function(item){ return item.message; }).join(", ") : msg;
+          }catch(_){}
+          responseDiv.style.color = "#ff6b6b";
+          responseDiv.textContent = "Error: " + msg;
+        }
+      } catch(err){
+        responseDiv.style.color = "#ff6b6b";
+        responseDiv.textContent = "Network error, please try again.";
+      }
+    });
+
+    const sections = ["hero","products","applications","solutions","inquiry"]
+      .map(function(id){ return document.getElementById(id); })
+      .filter(Boolean);
+    const navLinks = Array.from(document.querySelectorAll(".menu a.scroll-link"));
+/* 觀察滑動到哪個Section時 導覽列對應項目加上Actice Class */
+    const io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          navLinks.forEach(function(a){ a.classList.remove("active"); });
+          const active = navLinks.find(function(a){
+            return a.getAttribute("href") === "#" + entry.target.id;
+          });
+          if(active) active.classList.add("active");
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0.02 });
+
+    sections.forEach(function(section){ io.observe(section); });
+  </script>
+</body>
+</html>
