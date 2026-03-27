@@ -1297,10 +1297,10 @@
     form.addEventListener("submit", async function(e){
       e.preventDefault();
       responseDiv.style.color = "#b8c4e6";
-      responseDiv.textContent = "Sending...";
+      responseDiv.textContent = "Wysyłanie..."; /*送出*/
 
       const nameValRaw = (form.querySelector('input[name="name"]')?.value || "").trim();
-      const nameVal = nameValRaw ? nameValRaw.replace(/\s+/g, " ") : "Inquiry";
+      const nameVal = nameValRaw ? nameValRaw.replace(/\s+/g, " ") : "Zapytanie"; /*Inquiry*/
 
       const pad = function(n){ return String(n).padStart(2, "0"); };
       const now = new Date();
@@ -1325,7 +1325,7 @@
 
         if (res.ok) {
           responseDiv.style.color = "#7cffb2";
-          responseDiv.textContent = "Your inquiry has been sent! We will reply by email.";
+          responseDiv.textContent = "Twoje zapytanie zostało wysłane. Odpowiemy e-mailem."; /*您的信件寄出了, 我們會回覆email給您*/
           form.reset();
 
           const pc = document.getElementById("partner_country");
@@ -1336,17 +1336,17 @@
           const subj = document.getElementById("_subject");
           if (subj) subj.value = "";
         } else {
-          let msg = "Please try again.";
+          let msg = "Spróbuj ponownie."; /*請再嘗試一次*/
           try{
             const data = await res.json();
             msg = data.errors ? data.errors.map(function(item){ return item.message; }).join(", ") : msg;
           }catch(_){}
           responseDiv.style.color = "#ff6b6b";
-          responseDiv.textContent = "Error: " + msg;
+          responseDiv.textContent = "Błąd: " + msg; /*錯誤*/
         }
       } catch(err){
         responseDiv.style.color = "#ff6b6b";
-        responseDiv.textContent = "Network error, please try again.";
+        responseDiv.textContent = "Błąd sieci. Spróbuj ponownie."; /*網路錯誤, 請再嘗試一次*/
       }
     });
 
